@@ -1,0 +1,6 @@
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\bin\Debug\Cronos.Modelo.dll
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\bin\Debug\Cronos.Modelo.pdb
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.dll
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.pdb
+C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csprojAssemblyReference.cache
