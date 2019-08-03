@@ -4,3 +4,9 @@ C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csproj.Cor
 C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.dll
 C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.pdb
 C:\Users\Usuario\Desktop\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csprojAssemblyReference.cache
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\bin\Debug\Cronos.Modelo.dll
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\bin\Debug\Cronos.Modelo.pdb
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csprojAssemblyReference.cache
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.csproj.CoreCompileInputs.cache
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.dll
+C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Cronos.Modelo\obj\Debug\Cronos.Modelo.pdb

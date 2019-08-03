@@ -23,6 +23,7 @@ namespace MVC.Modelo
         public Datos()
         {
             strCadenaConexion = @"Data Source=DESKTOP-GTA0ABB\SQLEXPRESS02;  Initial Catalog= ELECTRON; Integrated Security=SSPI";
+            //a Carlos le gustan los huevos de eduardo
         }
 
 
