@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Agregar_Consolas.aspx" />
+    <Content Include="Views\Consolas.aspx" />
     <Content Include="Views\css\sb-admin-2.css" />
     <Content Include="Views\css\sb-admin-2.min.css" />
     <Content Include="Views\img\electronica.png" />
@@ -1685,6 +1687,20 @@
     <Content Include="Views\LOGING.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Agregar_Consolas.aspx.cs">
+      <DependentUpon>Agregar_Consolas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Agregar_Consolas.aspx.designer.cs">
+      <DependentUpon>Agregar_Consolas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consolas.aspx.cs">
+      <DependentUpon>Consolas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Consolas.aspx.designer.cs">
+      <DependentUpon>Consolas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inicio.Master.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1707,19 +1723,19 @@
     <Compile Include="Views\LOGING.aspx.designer.cs">
       <DependentUpon>LOGING.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Registrar_Usu.aspx.cs">
-      <DependentUpon>Registrar_Usu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Registrar_Usu.aspx.designer.cs">
-      <DependentUpon>Registrar_Usu.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\alertas.aspx.cs">
       <DependentUpon>alertas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\alertas.aspx.designer.cs">
       <DependentUpon>alertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Registrar_Usu.aspx.cs">
+      <DependentUpon>Registrar_Usu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Registrar_Usu.aspx.designer.cs">
+      <DependentUpon>Registrar_Usu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

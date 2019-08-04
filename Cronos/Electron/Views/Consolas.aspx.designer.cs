@@ -10,15 +10,15 @@
 namespace Electron.Views {
     
     
-    public partial class Registrar_Usu {
+    public partial class Consolas {
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
