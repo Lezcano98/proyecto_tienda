@@ -18,7 +18,7 @@
                 <asp:Label ID="Label1" runat="server" BackColor="White" ForeColor="Black" Text="ingrese el nombre de la consola "></asp:Label>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtnombre_consola" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtnombre_consola" runat="server" required=""></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -31,7 +31,7 @@
                 <asp:Label ID="Label3" runat="server" ForeColor="Black" Text="Ingrese el precio"></asp:Label>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtprecioconsola" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="txtprecioconsola" runat="server" TextMode="Number" required=""></asp:TextBox>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label4" runat="server" ForeColor="Black" Text="Indique una descripcion"></asp:Label>
@@ -39,11 +39,22 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtdescripcion" runat="server" Height="62px" TextMode="MultiLine" Width="257px"></asp:TextBox>
                 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label5" runat="server" ForeColor="Black" Text="Codigo dela Consola"></asp:Label>
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="txtcodigo" runat="server"></asp:TextBox>
+                <br />
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnIngresarC" runat="server" OnClick="btnIngresarC_Click" Text="Aceptar" />
                 <br />
                 <br />
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style2">
+                <asp:Label ID="lblmensaje" runat="server"></asp:Label>
+            </td>
             <td>&nbsp;</td>
         </tr>
     </table>
