@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MVC.Modelo;
 using System.Data;
+using System.IO;
 
 namespace Cronos.Controlador
 {
@@ -27,14 +28,14 @@ namespace Cronos.Controlador
             {
                 cnGeneral = new Datos();
                 SqlParameter[] parParameter = new SqlParameter[6];
-
+               
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objconsolas.Opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@Codigo_Articilo";
+                parParameter[1].ParameterName = "@Codigo_Articulo";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objconsolas.Codigo_consola;
 

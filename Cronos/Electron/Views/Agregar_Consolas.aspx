@@ -8,6 +8,10 @@
             width: 179px;
         }
     </style>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -58,6 +62,34 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+
+    <script type="text/javascript">
+
+        // mensaje de error
+                 function mensajeError() {
+                     swal.fire({
+                         title: '¡Error!',
+                         text: "¡EL Usuario o la Contraseña son Incorrectos por favor Verifique!",
+                         type: 'error',
+                         showConfirmButton: false,
+                         allowOutsideClick: false,
+                         timer: 4000,
+
+                     })
+        }
+
+        //mensaje de conrfimacion
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡"+"Los Datos se Guardaron Con Exito" +"!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
+
+        }
+                 </script>
+
 
 
 </asp:Content>
