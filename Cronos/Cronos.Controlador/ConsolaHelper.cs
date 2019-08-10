@@ -39,12 +39,11 @@ namespace Cronos.Controlador
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objconsolas.Codigo_consola;
 
-
                 parParameter[2] = new SqlParameter();
                 parParameter[2].ParameterName = "@Descripcion_articulo";
                 parParameter[2].SqlDbType = SqlDbType.VarChar;
                 parParameter[2].Size = 50;
-                parParameter[2].SqlValue = objconsolas.Precio;
+                parParameter[2].SqlValue = objconsolas.Descripcion;
 
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@Precio_articulo";
@@ -62,7 +61,7 @@ namespace Cronos.Controlador
                 parParameter[5].Size = 20;
                 parParameter[5].SqlValue = objconsolas.Nombre_consola;
 
-                cnGeneral.EjecutarSP(parParameter, "Consolas");
+                cnGeneral.EjecutarSP(parParameter,"Consolas");
 
             }
             catch (Exception ex)

@@ -43,14 +43,16 @@ namespace Electron.Views
                   
 
                     this.con.Nombre_consola = this.txtnombre_consola.Text;
-                    // para poder ingresar imagenes a la base de datos 
-                    
-                string filename = Path.GetFileName(flcargarArchivo.FileName);
-                int tamano = flcargarArchivo.PostedFile.ContentLength;
-                byte[]pic = new byte[tamano]; /*Convert.FromBase64String(filename);*/
-                 flcargarArchivo.PostedFile.InputStream.Read(pic, 0, tamano);
-                    //fin de la instruccion
-                    this.con.Imagen_consola=byte.Parse(flcargarArchivo.ToString());
+                // para poder ingresar imagenes a la base de datos 
+
+
+
+                //string filename = Path.GetFileName(flcargarArchivo.FileName);
+                //int tamano = flcargarArchivo.PostedFile.ContentLength;
+                //byte[]pic = new byte[tamano]; /*Convert.FromBase64String(filename);*/
+                // flcargarArchivo.PostedFile.InputStream.Read(pic, 0, tamano);
+                //fin de la instruccion
+                this.con.Imagen_consola = flcargarArchivo.FileBytes;
                     
                     this.con.Precio = int.Parse(this.txtprecioconsola.Text);
                     this.con.Descripcion = this.txtdescripcion.Text;
