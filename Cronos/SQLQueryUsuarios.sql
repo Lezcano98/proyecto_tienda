@@ -10,9 +10,16 @@
 --)
 
 go
-alter procedure SPUsuario
-@opcion int,@Nombre varchar(20)=null,@Apellido varchar(20)=null,@Apellido2 varchar(20)=null,@Cedula varchar(9)=null,
-@Correo varchar(20)=null,@Nombre_Usuario varchar(20)=null, @Clave varchar(20)=null,@Tipo int=null
+create procedure SPUsuario
+@opcion int,
+@Nombre varchar(20)=null,
+@Apellido varchar(20)=null,
+@Apellido2 varchar(20)=null,
+@Cedula varchar(9)=null,
+@Correo varchar(20)=null,
+@Nombre_Usuario varchar(20)=null, 
+@Clave varchar(20)=null,
+@Tipo varchar(20)=null
 
 as 
 if @opcion=1
@@ -36,9 +43,21 @@ begin
 update Usuario set Nombre=@Nombre,Apellido=@Apellido,Apellido2=@Apellido2,Correo=@Correo,Nombre_Usuario=@Nombre_Usuario,Clave=@Clave,Tipo=@Tipo where Cedula=@Cedula
 end
 
-if @opcion=5
+--if @opcion=5
+--begin
+-- select * from Usuario where Nombre_Usuario=@Nombre_Usuario and Clave=@Clave
+--end
+
+
+---------------------------------------------------------------------------------------
+create procedure SPValida
+
+@opcion int,
+@Nombre_Usuario varchar(20)=null, 
+@Clave varchar(20)=null
+
+as
+if @opcion=1
 begin
  select * from Usuario where Nombre_Usuario=@Nombre_Usuario and Clave=@Clave
 end
-
-insert into Usuario values('leonardo','rodriguez','salazar','1299282','leonatro24@','tomepichi','leo10',2)

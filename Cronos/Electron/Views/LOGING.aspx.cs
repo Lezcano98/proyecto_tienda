@@ -30,7 +30,7 @@ namespace Electron
                 this.usuarios.Nombre_usuario = this.txtnombreusuario.Text;
                 this.usuarios.Clave = this.txtclave.Text;
                 // uso de la opcion del proceso almacenado
-                this.usuarios.Opc = 5;
+                this.usuarios.Opc = 1;
                 this.UsuariosHelper = new UsuariosHelper(usuarios);
                 this.datos = new DataTable();
                 this.datos = this.UsuariosHelper.validarusuario();
@@ -38,15 +38,17 @@ namespace Electron
                 if (datos.Rows.Count>=0)
                 {
                     DataRow fila = datos.Rows[0];
-                    Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString()); 
+                    Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                     Response.Redirect("principal.aspx");
+                    
+                   
                 }
 
             }
             catch (Exception)
             {
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + ""+ "');", true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
             }
         }
     }
