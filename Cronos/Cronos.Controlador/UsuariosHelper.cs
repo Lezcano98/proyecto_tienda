@@ -44,8 +44,8 @@ namespace Cronos.Controlador
 
                 parParameter[2] = new SqlParameter();
                 parParameter[2].ParameterName = "@Clave";
-                parParameter[2].SqlDbType = SqlDbType.VarChar;
-                parParameter[2].Size = 20;
+                parParameter[2].SqlDbType = SqlDbType.VarBinary;
+                parParameter[2].Size = 8000;
                 parParameter[2].SqlValue = objusuarios.Clave;
 
                 //para  mi proceso almacenado USUARIO

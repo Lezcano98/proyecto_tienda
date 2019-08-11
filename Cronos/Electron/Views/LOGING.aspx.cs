@@ -40,9 +40,22 @@ namespace Electron
                     DataRow fila = datos.Rows[0];
                     Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                     Response.Redirect("principal.aspx");
-                    
-                   
-                }
+
+                    //if (fila["tipo"].ToString() == "Administrador")
+                    //{
+                    //    Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
+                    //    Response.Redirect("principal.aspx");
+                    //    }
+                    //else if (fila["tipo"].ToString() == "Cliente")
+                    //    {
+
+                    //        Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
+                    //        Response.Redirect("Principal2.aspx");
+
+                    //    }
+
+
+                    }
 
             }
             catch (Exception)

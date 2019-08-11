@@ -84,6 +84,7 @@
     <Content Include="Views\js\sb-admin-2.js" />
     <Content Include="Views\js\sb-admin-2.min.js" />
     <Content Include="Views\principal.aspx" />
+    <Content Include="Views\Principal2.aspx" />
     <Content Include="Views\Registrar_Usu.aspx" />
     <Content Include="Views\sweetalert\sweetalert2.all.js" />
     <Content Include="Views\sweetalert\sweetalert2.all.min.js" />
@@ -1708,6 +1709,13 @@
     <Compile Include="Views\Inicio.Master.designer.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\master2.Master.cs">
+      <DependentUpon>master2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\master2.Master.designer.cs">
+      <DependentUpon>master2.Master</DependentUpon>
+    </Compile>
     <Compile Include="Views\principal.aspx.cs">
       <DependentUpon>principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1729,6 +1737,13 @@
     </Compile>
     <Compile Include="Views\alertas.aspx.designer.cs">
       <DependentUpon>alertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal2.aspx.cs">
+      <DependentUpon>Principal2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal2.aspx.designer.cs">
+      <DependentUpon>Principal2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Registrar_Usu.aspx.cs">
       <DependentUpon>Registrar_Usu.aspx</DependentUpon>
@@ -1909,6 +1924,7 @@
     <Content Include="Views\vendor\jquery\jquery.min.map" />
     <Content Include="Views\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\.vscode\launch.json" />
+    <Content Include="Views\master2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
