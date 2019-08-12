@@ -47,14 +47,29 @@ alter procedure SPValida
 @Nombre_Usuario varchar(20)=null, 
 @Clave varchar(max)=null
 as
+declare @encriptado as Nvarchar (max)
+declare @desencriptado as Nvarchar(max)
+
 if @opcion=1
 begin
- select *from Usuario where Nombre_Usuario=@Nombre_Usuario and Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',@Clave))
+
+select @encriptado=clave from Usuario where Nombre_Usuario=@Nombre_Usuario
+set @desencriptado=convert(varchar(max),DECRYPTBYPASSPHRASE('password',@encriptado))
+
+select *from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado 
+--select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado
+
+--Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',@Clave))
 end
--- select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and clave=@clave
+--------------------------------------------------------------------------------------------------------------------
+delete Usuario where Codigo_Usuario=1
 select * from Usuario
+
 ---------------------------------------------------------------------------------------------------------------------------------
-insert into Usuario values(1,'leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','le0'),'Administrador')
+insert into Usuario values(1,'leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','leo10'),'Administrador')
 insert into Usuario values(2,'calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
+insert into Usuario values(4,'keyssi','rivera','de lezcano','33333','key@','key',ENCRYPTBYPASSPHRASE('password','key3'),'Administrador')
+
 -------------------------------------------------------------------------------------------------------------------
 delete Usuario where Codigo_Usuario =2
+------------------------------------------------------------------------------------------------------------------------------------

@@ -49,7 +49,7 @@ namespace Cronos.Controlador
                 parParameter[2].SqlValue = objusuarios.Clave;
 
                 //para  mi proceso almacenado USUARIO
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPValida");
+                tblDatos = cnGeneral.RetornaTabla(parParameter,"SPValida");
 
             }
             catch (Exception ex)
