@@ -15,7 +15,7 @@ namespace Electron.Views
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            this.lblingresado.Text = Usuarios.Nombre;
+            this.lblingresado.Text = Usuarios.NonbreyApellido;
         }
     }
 }

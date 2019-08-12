@@ -52,15 +52,13 @@ namespace Electron
 
                     }
 
-
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                this.txtnombreusuario.Text = ex.Message;
-
-                //ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
+               
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
             }
         }
     }

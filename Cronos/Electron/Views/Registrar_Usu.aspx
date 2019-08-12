@@ -27,44 +27,45 @@
               </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="nombre"/>
+                   <asp:TextBox id="txtnombre"  type="text" class="form-control form-control-user" runat="server" placeholder="nombre"></asp:TextBox>
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="primer apellido"/>
+                    <asp:TextBox  id="txtapellido" type="text" class="form-control form-control-user" runat="server" placeholder="primer apellido"></asp:TextBox>
                   </div>        
                     <div class="col-sm-6">
                         <br>
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder=" segundo apellido"/>
+                    <asp:TextBox Id="txtapellido2" type="text" class="form-control form-control-user" runat="server" placeholder=" segundo apellido"></asp:TextBox>
+                  </div>
+                    <div class="col-sm-6">
+                        <br>
+                    <asp:TextBox Id="txtcedula" class="form-control form-control-user" runat="server" placeholder="ingresar numero de cedula" TextMode="Number"></asp:TextBox>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="nombre de usuario"/>
+                  <asp:TextBox id="txtnombreUsu" type="text" class="form-control form-control-user" runat="server" placeholder="nombre de usuario"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="ingrese su correo"/>
+                  <asp:TextBox  id="txtcorreo" type="email" class="form-control form-control-user" runat="server" placeholder="ingrese su correo"></asp:TextBox>
                 </div>
                   <%-- dropdow para rol de suuario --%>
                         <div class="bg-white py-2 collapse-inner rounded"> Selecione Tipo de Usuario&nbsp;
                             <asp:DropDownList ID="DropDownList1" runat="server">
                                 <asp:ListItem>ADMINISTRADOR </asp:ListItem>
-                                <asp:ListItem>USUARIO</asp:ListItem>
+                                <asp:ListItem>CLIENTE</asp:ListItem>
                             </asp:DropDownList>
                                 </div>
                  
                   <%-- fin de la instrucion --%>
-                <div class="form-group row">
+                <%--<div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="contrseña"/>
                   </div>
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="vuelva a ingresar la contrseña"/>
                   </div>
-                </div>
-                <a href="#" class="btn btn-primary btn-user btn-block">
-                  ACEPTAR
-                </a>             
+                </div>--%>
+                <asp:Button class="btn btn-primary btn-user btn-block" ID="btnAceptar" runat="server" Text="INGRESAR" OnClick="btnAceptar_Click">     
+                    </asp:Button>             
           </div>
-
-
 
 </asp:Content>
