@@ -37,7 +37,7 @@ namespace Electron.Views
         }
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-           
+            
             try
             {
                 this.usu = new Usuarios();
@@ -47,59 +47,60 @@ namespace Electron.Views
                 this.usu.Cedula = this.txtcedula.Text;
                 this.usu.Correo = this.txtcorreo.Text;
                 this.usu.Nombre_usuario = this.txtnombreUsu.Text;
-                this.usu.Clave = CrearPassword(8);
+                this.usu.Tipo = this.DropDownList1.SelectedValue;
+                this.usu.Clave =CrearPassword(8);
                 this.usu.Opc = 1;
                 this.usuHelper = new UsuariosHelper(usu);
                 this.usuHelper.AgregarUsuarios();
 
+                this.txtnombre.Text = "los datos se guardaron con exito";
+
             }
           
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                this.txtnombre.Text = ex.Message;
             }
-
-           
-
-        }
-       private bool EnviarCorreo(string destino,string Asunto, string Cuerpo)
-        {
-             
-            try
+             bool EnviarCorreo(string destino, string Asunto, string Cuerpo)
             {
-            
-                System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-                msg.To.Add(destino);
-                msg.Bcc.Add(this.txtcorreo.Text); //Copia Oculto, en caso que se requiera
-                msg.From = new MailAddress(this.txtcorreo.Text, "Registro En La Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
-                msg.Subject = Asunto;
-                msg.SubjectEncoding = System.Text.Encoding.UTF8;
-                msg.Body = Cuerpo="Usted se Registro en la tienda Cronos este es su nombre de usuario'"+this.txtnombreUsu+"' y esta es su clave '" +CrearPassword(8)+"' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias";
-                msg.BodyEncoding = System.Text.Encoding.Unicode;
-                msg.IsBodyHtml = true;
+                try
+                {
 
-                SmtpClient client = new SmtpClient();
-                client.UseDefaultCredentials = false;
-                client.Credentials = new System.Net.NetworkCredential(this.txtcorreo.Text, CrearPassword(8));
+                    System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-                client.Port = 587;
-                client.Host = "smtp.gmail.com";
-                client.EnableSsl = true;
+                    msg.To.Add(destino);
+                    msg.Bcc.Add(this.txtcorreo.Text); //Copia Oculto, en caso que se requiera
+                    msg.From = new MailAddress(this.txtcorreo.Text, "Registro En La Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
+                    msg.Subject = Asunto;
+                    msg.SubjectEncoding = System.Text.Encoding.UTF8;
+                    msg.Body = Cuerpo = "Usted se Registro en la tienda Cronos este es su nombre de usuario'" + this.txtnombreUsu + "' y esta es su clave '" + CrearPassword(8) + "' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias";
+                    msg.BodyEncoding = System.Text.Encoding.Unicode;
+                    msg.IsBodyHtml = true;
 
-                client.Send(msg);
-                client.Dispose();
+                    SmtpClient client = new SmtpClient();
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new System.Net.NetworkCredential("lezki90.loco@gmail.com", "lezki9009");
 
-                return true;
-            }
-            catch (System.Net.Mail.SmtpException ex)
-            {
-                return false;
+                    client.Port = 587;
+                    client.Host = "smtp.gmail.com";
+                    client.EnableSsl = true;
+
+                    client.Send(msg);
+                    client.Dispose();
+
+                    return true;
+                }
+                catch (System.Net.Mail.SmtpException ex)
+                {
+                    return false;
+                }
             }
 
 
         }
+       
 
 
     }

@@ -14,10 +14,7 @@
 ALTER TABLE Usuario  
 ADD CONSTRAINT AK_cedula UNIQUE (Cedula);   
 GO 
-
-
 --------------------------
-
 alter procedure SPUsuario
 	@opcion int, 
 	@Nombre varchar(20)= null,
@@ -26,13 +23,15 @@ alter procedure SPUsuario
 	@Cedula varchar(9)= null, 
 	@Correo varchar(20)=null,
 	@Nombre_Usuario varchar(20)=null,
-	@Clave varbinary(8000)= null,
+	@Clave varbinary(800) =null,
 	@tipo varchar(20) =null
-
+ 
 	as
+
 	if @opcion = 1
 	begin
-		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,ENCRYPTBYPASSPHRASE('password', @Clave),@tipo)
+	set @Clave= convert(varbinary(800),@Clave)
+		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,convert (varbinary(8000),ENCRYPTBYPASSPHRASE('password', @Clave)),@tipo)		
 	end
 
 	if @opcion = 2
@@ -71,7 +70,7 @@ select *from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencript
 --select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado
 end
 --------------------------------------------------------------------------------------------------------------------
-delete Usuario where Codigo_Usuario=1
+delete Usuario where Codigo_Usuario=6
 select * from Usuario
 
 ---------------------------------------------------------------------------------------------------------------------------------

@@ -137,8 +137,8 @@ namespace Cronos.Controlador
 
                 parParameter[7] = new SqlParameter();
                 parParameter[7].ParameterName = "@Clave";
-                parParameter[7].SqlDbType = SqlDbType.VarBinary;
-                parParameter[7].Size = 8000;
+                parParameter[7].SqlDbType = SqlDbType.VarChar;
+                parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objusuarios.Clave;
 
                 parParameter[8] = new SqlParameter();

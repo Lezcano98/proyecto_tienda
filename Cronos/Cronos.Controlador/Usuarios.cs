@@ -63,43 +63,5 @@ namespace Cronos.Controlador
             nonbreyApellido = nombreresgitrado;
         }
 
-        // metodo para enviar correos apartir de ingresar un usuario al sistema.
-        public bool EnviarCorreo(string destino, string Asunto, string Cuerpo)
-        {
-
-            try
-            {
-                System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-
-                msg.To.Add(destino);
-                msg.Bcc.Add(Correo); //Copia Oculto, en caso que se requiera
-                msg.From = new MailAddress(Correo, "Registro En La Tienda Cronos",System.Text.Encoding.UTF8);//Verificar el formato
-                msg.Subject = Asunto;
-                msg.SubjectEncoding = System.Text.Encoding.UTF8;
-                msg.Body = Cuerpo;
-                msg.BodyEncoding = System.Text.Encoding.Unicode;
-                msg.IsBodyHtml = true;
-
-                SmtpClient client = new SmtpClient();
-                client.UseDefaultCredentials = false;
-                client.Credentials = new System.Net.NetworkCredential(Correo,Clave);
-
-                client.Port = 587;
-                client.Host = "smtp.gmail.com";
-                client.EnableSsl = true;
-
-                client.Send(msg);
-                client.Dispose();
-
-                return true;
-            }
-            catch (System.Net.Mail.SmtpException ex)
-            {
-                return false;
-            }
-
-
-        }
-
     }
     }
