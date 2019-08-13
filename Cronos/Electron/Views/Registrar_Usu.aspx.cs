@@ -16,6 +16,7 @@ namespace Electron.Views
 {
     public partial class Registrar_Usu : System.Web.UI.Page
     {
+        private Correos c;
         private Usuarios usu;
         private DataTable datos;
         private UsuariosHelper usuHelper;
@@ -37,7 +38,7 @@ namespace Electron.Views
         }
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 this.usu = new Usuarios();
@@ -48,60 +49,33 @@ namespace Electron.Views
                 this.usu.Correo = this.txtcorreo.Text;
                 this.usu.Nombre_usuario = this.txtnombreUsu.Text;
                 this.usu.Tipo = this.DropDownList1.SelectedValue;
-                this.usu.Clave =CrearPassword(10);
+                this.usu.Clave = CrearPassword(10);
+                EnviarCorreos();
                 this.usu.Opc = 1;
                 this.usuHelper = new UsuariosHelper(usu);
                 this.usuHelper.AgregarUsuarios();
-
+            
                 this.txtnombre.Text = "los datos se guardaron con exito";
 
             }
-          
+
             catch (Exception ex)
             {
 
                 this.txtnombre.Text = ex.Message;
             }
-             bool EnviarCorreo(string destino, string Asunto, string Cuerpo)
-            {
-
-                try
-                {
-
-                    System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-
-                    msg.To.Add(destino=this.txtcorreo.Text);
-                    msg.Bcc.Add(this.txtcorreo.Text); //Copia Oculto, en caso que se requiera
-                    msg.From = new MailAddress(this.txtcorreo.Text, "Registro En La Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
-                    msg.Subject = Asunto;
-                    msg.SubjectEncoding = System.Text.Encoding.UTF8;
-                    msg.Body = Cuerpo = "Usted se Registro en la tienda Cronos este es su nombre de usuario'" + this.txtnombreUsu + "' y esta es su clave '" + CrearPassword(8) + "' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias";
-                    msg.BodyEncoding = System.Text.Encoding.Unicode;
-                    msg.IsBodyHtml = true;
-
-                    SmtpClient client = new SmtpClient();
-                    client.UseDefaultCredentials = false;
-                    client.Credentials = new System.Net.NetworkCredential("lezki90.loco@gmail.com", "lezki9009");
-
-                    client.Port = 587;
-                    client.Host = "smtp.gmail.com";
-                    client.EnableSsl = true;
-
-                    client.Send(msg);
-                    client.Dispose();
-
-                    return true;
-                }
-                catch (System.Net.Mail.SmtpException ex)
-                {
-                    return false;
-                }
-            }
 
 
         }
-       
+        public void EnviarCorreos()
+        {
+            this.c = new Correos();
+            this.c.Enviar_Correo(this.txtcorreo.Text, "Registro en la tienda Cronos", "Usted se Registro en la tienda Cronos este es su nombre de usuario'" + this.txtnombreUsu.Text + "'y esta es su clave '" + this.usu.Clave+ "' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias");
+
+        }
 
 
     }
+
 }
+

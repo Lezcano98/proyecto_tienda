@@ -68,7 +68,7 @@ select *from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencript
 --select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado
 end
 --------------------------------------------------------------------------------------------------------------------
-delete Usuario where Codigo_Usuario=7
+delete Usuario where Codigo_Usuario=11
 select * from Usuario
 ------------este update es para cambiar el tipo de minuscula ha mayuscula. debido a que envial estan en mayusculas.
 update Usuario set tipo='CLIENTE ' where tipo='Cliente' 

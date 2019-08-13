@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ConsolaHelper.cs" />
     <Compile Include="Consolas.cs" />
+    <Compile Include="Correos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="UsuariosHelper.cs" />
