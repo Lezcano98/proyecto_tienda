@@ -39,12 +39,12 @@ namespace Electron
                 {
                     DataRow fila = datos.Rows[0];
                   
-                    if (fila["tipo"].ToString() == "Administrador")
+                    if (fila["tipo"].ToString() == "ADMINISTRADOR ")
                     {
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                         Response.Redirect("principal.aspx");
                     }
-                    else if (fila["tipo"].ToString() == "Cliente")
+                    else if (fila["tipo"].ToString() == "CLIENTE")
                     {
 
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
@@ -57,8 +57,8 @@ namespace Electron
             }
             catch (Exception)
             {
-               
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
+              
+               ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
             }
         }
     }

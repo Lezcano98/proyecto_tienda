@@ -48,7 +48,7 @@ namespace Electron.Views
                 this.usu.Correo = this.txtcorreo.Text;
                 this.usu.Nombre_usuario = this.txtnombreUsu.Text;
                 this.usu.Tipo = this.DropDownList1.SelectedValue;
-                this.usu.Clave =CrearPassword(8);
+                this.usu.Clave =CrearPassword(10);
                 this.usu.Opc = 1;
                 this.usuHelper = new UsuariosHelper(usu);
                 this.usuHelper.AgregarUsuarios();
@@ -70,7 +70,7 @@ namespace Electron.Views
 
                     System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-                    msg.To.Add(destino);
+                    msg.To.Add(destino=this.txtcorreo.Text);
                     msg.Bcc.Add(this.txtcorreo.Text); //Copia Oculto, en caso que se requiera
                     msg.From = new MailAddress(this.txtcorreo.Text, "Registro En La Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
                     msg.Subject = Asunto;

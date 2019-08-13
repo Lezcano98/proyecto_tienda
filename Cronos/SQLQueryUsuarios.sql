@@ -23,15 +23,13 @@ alter procedure SPUsuario
 	@Cedula varchar(9)= null, 
 	@Correo varchar(20)=null,
 	@Nombre_Usuario varchar(20)=null,
-	@Clave varbinary(800) =null,
+	@Clave varchar(max) =null,
 	@tipo varchar(20) =null
  
 	as
-
 	if @opcion = 1
 	begin
-	set @Clave= convert(varbinary(800),@Clave)
-		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,convert (varbinary(8000),ENCRYPTBYPASSPHRASE('password', @Clave)),@tipo)		
+		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave)),@tipo)		
 	end
 
 	if @opcion = 2
@@ -46,7 +44,7 @@ alter procedure SPUsuario
 
 	if @opcion = 4
 	begin
-		update Usuario set Nombre = @Nombre,Apellido = @Apellido,Apellido2=@Apellido2,Correo=@Correo,Nombre_Usuario=@Nombre_Usuario,Clave=@Clave,Tipo=@tipo where Cedula =@cedula
+		update Usuario set Nombre = @Nombre,Apellido = @Apellido,Apellido2=@Apellido2,Correo=@Correo,Nombre_Usuario=@Nombre_Usuario,Clave=CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave)),Tipo=@tipo where Cedula =@cedula
 	end
 
 --------------------------------------------------------------------------------------------------------------------
@@ -70,9 +68,10 @@ select *from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencript
 --select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado
 end
 --------------------------------------------------------------------------------------------------------------------
-delete Usuario where Codigo_Usuario=6
+delete Usuario where Codigo_Usuario=7
 select * from Usuario
-
+------------este update es para cambiar el tipo de minuscula ha mayuscula. debido a que envial estan en mayusculas.
+update Usuario set tipo='CLIENTE ' where tipo='Cliente' 
 ---------------------------------------------------------------------------------------------------------------------------------
 insert into Usuario values(1,'leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','leo10'),'Administrador')
 insert into Usuario values(2,'calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
