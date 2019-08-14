@@ -25,16 +25,29 @@ namespace Cronos.Controlador
                 msg.BodyEncoding = System.Text.Encoding.Unicode;
                 msg.IsBodyHtml = true;
 
-                SmtpClient client = new SmtpClient();
+                ///  //Hotmail: smtp.live.com puerto:25
+                //SmtpClient server = new SmtpClient();// para usar el smtp de hotmail
+
+                SmtpClient client = new SmtpClient();// para usar el smtp de gmail
+                // credenciales de gmail
                 client.UseDefaultCredentials = false;
                 client.Credentials = new System.Net.NetworkCredential("lezki90.loco@gmail.com", "lezki9009");
+                // credenciales de hotmail
+                //server.UseDefaultCredentials = false;
+                //server.Credentials = new System.Net.NetworkCredential("leonatro24@hotmail.com", "heredia12");
 
                 client.Port = 587;
                 client.Host = "smtp.gmail.com";
-                client.EnableSsl = true;
+                //client.Port = 25;
+                //client.Host = "smtp.live.com";
 
+                client.EnableSsl = true;
+                //server.EnableSsl = true;
                 client.Send(msg);
                 client.Dispose();
+
+                //server.Send(msg);
+                //server.Dispose();
 
                 return true;
             }

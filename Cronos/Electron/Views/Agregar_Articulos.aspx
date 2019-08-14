@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Inicio.Master" AutoEventWireup="true" CodeBehind="Agregar_Consolas.aspx.cs" Inherits="Electron.Views.Agregar_Consolas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Inicio.Master" AutoEventWireup="true" CodeBehind="Agregar_Articulos.aspx.cs" Inherits="Electron.Views.Agregar_Consolas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -19,7 +19,7 @@
     <table class="w-100">
         <tr>
             <td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label1" runat="server" BackColor="White" ForeColor="Black" Text="ingrese el nombre de la consola "></asp:Label>
+                <asp:Label ID="Label1" runat="server" BackColor="White" ForeColor="Black" Text="Ingrese el nombre de el Articulo"></asp:Label>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtnombre_consola" runat="server" required=""></asp:TextBox>
@@ -38,10 +38,18 @@
                 <asp:TextBox ID="txtprecioconsola" runat="server" TextMode="Number" required=""></asp:TextBox>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label4" runat="server" ForeColor="Black" Text="Indique una descripcion"></asp:Label>
+                <asp:Label ID="Label4" runat="server" ForeColor="Black" Text="Indique una descripcion de el Articulo"></asp:Label>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtdescripcion" runat="server" Height="62px" TextMode="MultiLine" Width="257px"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Label ID="Label6" runat="server" ForeColor="Black" Text=" Tipo de Articulo"></asp:Label>
+&nbsp;<asp:DropDownList ID="dp_tipo_articulo" runat="server" Height="26px" Width="141px">
+                    <asp:ListItem Value="1">Consola</asp:ListItem>
+                    <asp:ListItem Value="2">Video Juego</asp:ListItem>
+                </asp:DropDownList>
+                <br />
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label5" runat="server" ForeColor="Black" Text="Codigo dela Consola"></asp:Label>
@@ -69,7 +77,7 @@
                  function mensajeError() {
                      swal.fire({
                          title: '¡Error!',
-                         text: "¡EL Usuario o la Contraseña son Incorrectos por favor Verifique!",
+                         text: "¡" + "Por Favor Verifique que los codigos no esten DUPLICADOS" + "!",
                          type: 'error',
                          showConfirmButton: false,
                          allowOutsideClick: false,
@@ -82,7 +90,7 @@
         function mensajeDeconfirmacion() {
             swal.fire({
                 title: "¡EXITO!",
-                text: "¡"+"Los Datos se Guardaron Con Exito" +"!",
+                text: "¡"+"Los Datos se Guardaron Con Exito"+"!",
                 type: 'success',
                 allowOutsideClick: false,
             })

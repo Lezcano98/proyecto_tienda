@@ -67,7 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Agregar_Consolas.aspx" />
+    <Content Include="Views\Agregar_Articulos.aspx" />
+    <Content Include="Views\Agregar_Departamentos.aspx" />
     <Content Include="Views\Consolas.aspx" />
     <Content Include="Views\css\sb-admin-2.css" />
     <Content Include="Views\css\sb-admin-2.min.css" />
@@ -1688,12 +1689,19 @@
     <Content Include="Views\LOGING.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\Agregar_Consolas.aspx.cs">
-      <DependentUpon>Agregar_Consolas.aspx</DependentUpon>
+    <Compile Include="Views\Agregar_Articulos.aspx.cs">
+      <DependentUpon>Agregar_Articulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Agregar_Consolas.aspx.designer.cs">
-      <DependentUpon>Agregar_Consolas.aspx</DependentUpon>
+    <Compile Include="Views\Agregar_Articulos.aspx.designer.cs">
+      <DependentUpon>Agregar_Articulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Agregar_Departamentos.aspx.cs">
+      <DependentUpon>Agregar_Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Agregar_Departamentos.aspx.designer.cs">
+      <DependentUpon>Agregar_Departamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Consolas.aspx.cs">
       <DependentUpon>Consolas.aspx</DependentUpon>

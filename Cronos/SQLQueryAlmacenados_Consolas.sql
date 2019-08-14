@@ -1,15 +1,16 @@
-alter procedure Consolas
+create procedure Articulos
 	@opcion int,
 	@Codigo_Articulo int = null,
 	@Descripcion_articulo varchar(max) = null, 
 	@Precio_articulo int, 
 	@imagen image = null,
-	@nombre_deArticulo varchar(20) = null
+	@nombre_deArticulo varchar(20) = null,
+	@Tipo_Articulo int =null
 	
 	as
 	if @opcion = 1
 	begin
-		insert into Articulo values(@Codigo_Articulo,@Descripcion_articulo, @Precio_articulo, @imagen, @nombre_deArticulo)
+		insert into Articulo values(@Codigo_Articulo,@Descripcion_articulo, @Precio_articulo, @imagen, @nombre_deArticulo,@Tipo_Articulo)
 	end
 
 	if @opcion = 2
@@ -24,7 +25,11 @@ alter procedure Consolas
 
 	if @opcion = 4
 	begin
-		update Articulo set Descripcion_articulo = @Descripcion_articulo, Precio_articulo = @Precio_articulo, imagen = @imagen, nombre_deArticulo = @nombre_deArticulo where Codigo_Articulo = @Codigo_Articulo
+		update Articulo set Descripcion_articulo = @Descripcion_articulo, Precio_articulo = @Precio_articulo, imagen = @imagen, nombre_deArticulo = @nombre_deArticulo,Tipo_Articulo=@Tipo_Articulo where Codigo_Articulo = @Codigo_Articulo
 	end
 
 	select * from Articulo
+	select * from Usuario
+
+	delete Articulo where Codigo_Articulo=3
+	update Articulo set Tipo_Articulo=1

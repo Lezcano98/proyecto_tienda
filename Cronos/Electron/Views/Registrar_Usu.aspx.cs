@@ -70,7 +70,7 @@ namespace Electron.Views
         public void EnviarCorreos()
         {
             this.c = new Correos();
-            this.c.Enviar_Correo(this.txtcorreo.Text, "Registro en la tienda Cronos", "Usted se Registro en la tienda Cronos este es su nombre de usuario'" + this.txtnombreUsu.Text + "'y esta es su clave '" + this.usu.Clave+ "' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias");
+            this.c.Enviar_Correo(this.txtcorreo.Text, "Registro en la tienda Cronos", "Usted se Registro en la tienda Cronos este es su nombre de usuario:'"+" "+"''" + this.txtnombreUsu.Text + "' y esta es su clave '" + this.usu.Clave+ "' le sugerimos por favor cambiar la clave cuando ingrese al sistema Gracias");
 
         }
 

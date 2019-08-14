@@ -11,23 +11,23 @@ using System.IO;
 
 namespace Cronos.Controlador
 {
-    public class ConsolaHelper
+    public class ArticulosHelper
     {
         Datos cnGeneral = null;
         DataTable tblDatos = null;
         // llama a mi clase usuario donde tengo mis constructores, set and get 
-        Consolas objconsolas = null;
-        public ConsolaHelper(Consolas parObjconsolas)
+        Articulos objconsolas = null;
+        public ArticulosHelper(Articulos parObjconsolas)
         {
             objconsolas = parObjconsolas;
         }
 
-        public void ingresarConsola()
+        public void IngresarArticulo()
         {
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[6];
+                SqlParameter[] parParameter = new SqlParameter[7];
                
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -61,7 +61,12 @@ namespace Cronos.Controlador
                 parParameter[5].Size = 20;
                 parParameter[5].SqlValue = objconsolas.Nombre_consola;
 
-                cnGeneral.EjecutarSP(parParameter,"Consolas");
+                parParameter[6] = new SqlParameter();
+                parParameter[6].ParameterName = "@Tipo_Articulo";
+                parParameter[6].SqlDbType = SqlDbType.Int;
+                parParameter[6].SqlValue = objconsolas.Tipo_Articulo;
+
+                cnGeneral.EjecutarSP(parParameter, "Articulos");
 
             }
             catch (Exception ex)

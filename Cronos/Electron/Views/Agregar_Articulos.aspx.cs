@@ -18,8 +18,8 @@ namespace Electron.Views
 {
     public partial class Agregar_Consolas : System.Web.UI.Page
     {
-     Cronos.Controlador.Consolas con= new Cronos.Controlador.Consolas();
-        private ConsolaHelper consolaHelper;
+     Cronos.Controlador.Articulos con= new Cronos.Controlador.Articulos();
+        private ArticulosHelper consolaHelper;
         private DataTable datos;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,33 +44,28 @@ namespace Electron.Views
 
                     this.con.Nombre_consola = this.txtnombre_consola.Text;
                 // para poder ingresar imagenes a la base de datos 
-
-
-
                 //string filename = Path.GetFileName(flcargarArchivo.FileName);
                 //int tamano = flcargarArchivo.PostedFile.ContentLength;
                 //byte[]pic = new byte[tamano]; /*Convert.FromBase64String(filename);*/
                 // flcargarArchivo.PostedFile.InputStream.Read(pic, 0, tamano);
                 //fin de la instruccion
-                this.con.Imagen_consola = flcargarArchivo.FileBytes;
-                    
+                    this.con.Imagen_consola = flcargarArchivo.FileBytes;
                     this.con.Precio = int.Parse(this.txtprecioconsola.Text);
                     this.con.Descripcion = this.txtdescripcion.Text;
                     this.con.Codigo_consola = int.Parse(this.txtcodigo.Text);
+                    this.con.Tipo_Articulo = int.Parse(dp_tipo_articulo.SelectedValue.ToString());
                     this.con.Opc = 1;
-                    this.consolaHelper = new ConsolaHelper(con);
-                    this.consolaHelper.ingresarConsola();
+                    this.consolaHelper = new ArticulosHelper(con);
+                    this.consolaHelper.IngresarArticulo();
 
-                this.lblmensaje.Text = "datos guardados";
-
-                    //ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
+              ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
 
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-               this.lblmensaje.Text = ex.Message;
-                    //ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + ex + "');", true);
+              
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
                 }
 
 

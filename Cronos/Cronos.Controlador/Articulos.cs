@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cronos.Controlador
 {
-    public class Consolas
+    public class Articulos
     {
         // declaracion de la opcion
         public int opc;
@@ -16,8 +16,9 @@ namespace Cronos.Controlador
         public int precio;
         public string descripcion;
         public int codigo_consola;
+        public int tipo_Articulo;
 
-        public Consolas(int opc, string nombre_consola, byte[] imagen_consola, int precio, string descripcion, int codigo_consola)
+        public Articulos(int opc, string nombre_consola, byte[] imagen_consola, int precio, string descripcion, int codigo_consola,int tipo_Articulo)
         {
             this.opc = opc;
             this.nombre_consola = nombre_consola;
@@ -25,8 +26,9 @@ namespace Cronos.Controlador
             this.precio = precio;
             this.descripcion = descripcion;
             this.codigo_consola = codigo_consola;
+            this.tipo_Articulo = tipo_Articulo;
         }
-        public Consolas()
+        public Articulos()
         {
             this.opc = 0;
             this.nombre_consola = "";
@@ -34,6 +36,7 @@ namespace Cronos.Controlador
             this.precio = 0;
             this.descripcion = "";
             this.codigo_consola = 0;
+            this.tipo_Articulo = 0;
         }
 
         public int Opc { get => opc; set => opc = value; }
@@ -42,5 +45,6 @@ namespace Cronos.Controlador
         public int Precio { get => precio; set => precio = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Codigo_consola { get => codigo_consola; set => codigo_consola = value; }
+        public int Tipo_Articulo { get => tipo_Articulo; set => tipo_Articulo = value; }
     }
 }
