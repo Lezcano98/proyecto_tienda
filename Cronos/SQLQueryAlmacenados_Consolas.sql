@@ -11,7 +11,7 @@ alter procedure Articulos
 	as
 	if @opcion = 1
 	begin
-		insert into Articulo values(@Descripcion_articulo, @Precio_articulo, @imagen, @nombre_deArticulo,@Tipo_Articulo,@Departamentos)
+		insert into Articulo values(@Codigo_Articulo,@Descripcion_articulo, @Precio_articulo, @imagen, @nombre_deArticulo,@Tipo_Articulo,@Departamentos)
 	end
 
 	if @opcion = 2

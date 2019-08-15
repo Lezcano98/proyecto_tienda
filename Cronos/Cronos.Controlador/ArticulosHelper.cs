@@ -27,7 +27,7 @@ namespace Cronos.Controlador
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
                
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -35,36 +35,41 @@ namespace Cronos.Controlador
                 parParameter[0].SqlValue = objconsolas.Opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@Descripcion_articulo";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 50;
-                parParameter[1].SqlValue = objconsolas.Descripcion;
+                parParameter[1].ParameterName = "@Codigo_Articulo";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objconsolas.codigo_Articulo;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@Precio_articulo";
-                parParameter[2].SqlDbType = SqlDbType.Money;
-                parParameter[2].SqlValue = objconsolas.Precio;
+                parParameter[2].ParameterName = "@Descripcion_articulo";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = objconsolas.Descripcion;
 
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@imagen";
-                parParameter[3].SqlDbType = SqlDbType.Image;
-                parParameter[3].SqlValue = objconsolas.Imagen_consola;
+                parParameter[3].ParameterName = "@Precio_articulo";
+                parParameter[3].SqlDbType = SqlDbType.Money;
+                parParameter[3].SqlValue = objconsolas.Precio;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@nombre_deArticulo";
-                parParameter[4].SqlDbType = SqlDbType.VarChar;
-                parParameter[4].Size = 20;
-                parParameter[4].SqlValue = objconsolas.Nombre_consola;
+                parParameter[4].ParameterName = "@imagen";
+                parParameter[4].SqlDbType = SqlDbType.Image;
+                parParameter[4].SqlValue = objconsolas.Imagen_consola;
 
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@Tipo_Articulo";
-                parParameter[5].SqlDbType = SqlDbType.Int;
-                parParameter[5].SqlValue = objconsolas.Tipo_Articulo;
+                parParameter[5].ParameterName = "@nombre_deArticulo";
+                parParameter[5].SqlDbType = SqlDbType.VarChar;
+                parParameter[5].Size = 20;
+                parParameter[5].SqlValue = objconsolas.Nombre_consola;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@Departamentos";
+                parParameter[6].ParameterName = "@Tipo_Articulo";
                 parParameter[6].SqlDbType = SqlDbType.Int;
-                parParameter[6].SqlValue = objconsolas.Id_Departamento;
+                parParameter[6].SqlValue = objconsolas.Tipo_Articulo;
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@Departamentos";
+                parParameter[7].SqlDbType = SqlDbType.Int;
+                parParameter[7].SqlValue = objconsolas.Id_Departamento;
 
                 cnGeneral.EjecutarSP(parParameter,"Articulos");
 
