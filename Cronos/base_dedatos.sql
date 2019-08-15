@@ -16,7 +16,8 @@ Tipo int not null
 create table Categorias(ID_Categoria int identity (1,1) primary key,
 Descripcion varchar(max) null)
 ----------------------------------------------------------------------
-create table Departamentos(ID_Departamentos int identity (1,1) primary key,
+create table Departamentos(
+ID_Departamentos int identity (1,1) primary key,
 Descripcion varchar(max) null,
 ID_Tipo int not null
 

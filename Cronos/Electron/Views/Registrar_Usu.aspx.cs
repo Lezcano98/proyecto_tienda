@@ -54,15 +54,15 @@ namespace Electron.Views
                 this.usu.Opc = 1;
                 this.usuHelper = new UsuariosHelper(usu);
                 this.usuHelper.AgregarUsuarios();
-            
-                this.txtnombre.Text = "los datos se guardaron con exito";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
 
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                this.txtnombre.Text = ex.Message;
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
 
 

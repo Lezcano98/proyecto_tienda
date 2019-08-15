@@ -27,7 +27,7 @@ namespace Cronos.Controlador
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
                
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -66,7 +66,12 @@ namespace Cronos.Controlador
                 parParameter[6].SqlDbType = SqlDbType.Int;
                 parParameter[6].SqlValue = objconsolas.Tipo_Articulo;
 
-                cnGeneral.EjecutarSP(parParameter, "Articulos");
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@Id_Departamentos";
+                parParameter[7].SqlDbType = SqlDbType.Int;
+                parParameter[7].SqlValue = objconsolas.Id_Departamento;
+
+                cnGeneral.EjecutarSP(parParameter,"Articulos");
 
             }
             catch (Exception ex)

@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Inicio.Master" AutoEventWireup="true" CodeBehind="Registrar_Usu.aspx.cs" Inherits="Electron.Views.Registrar_Usu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+     <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -68,5 +72,31 @@
                     </asp:Button>             
           </div>
 
+              <script type="text/javascript">
+
+        // mensaje de error
+                 function mensajeError() {
+                     swal.fire({
+                         title: '¡Error!',
+                         text: "¡" + " El nombre de usuario y el numero de cedula no deben ser DUPLICADOS" + "!",
+                         type: 'error',
+                         showConfirmButton: false,
+                         allowOutsideClick: false,
+                         timer: 4000,
+
+                     })
+        }
+
+        //mensaje de conrfimacion
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡"+"El usuario se guardo con EXITO"+"!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
+
+        }
+                 </script>
  
 </asp:Content>

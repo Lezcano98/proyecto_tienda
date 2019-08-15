@@ -22,3 +22,5 @@ alter procedure SPDepartamentos
 	ALTER TABLE Departamentos    
 ADD CONSTRAINT AK_Departamentos UNIQUE (Descripcion);   
 GO 
+
+select *from Usuario

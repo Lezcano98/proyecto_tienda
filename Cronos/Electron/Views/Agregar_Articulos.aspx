@@ -52,10 +52,17 @@
                 <br />
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label5" runat="server" ForeColor="Black" Text="Codigo dela Consola"></asp:Label>
+                <asp:Label ID="Label5" runat="server" ForeColor="Black" Text="Codigo del Articulo"></asp:Label>
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtcodigo" runat="server"></asp:TextBox>
+                <br />
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label7" runat="server" ForeColor="Black" Text="Numero del Departamento al cual se Ingresara"></asp:Label>
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="txtNumero_Departamento" runat="server" TextMode="Number"></asp:TextBox>
                 <br />
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -77,7 +84,7 @@
                  function mensajeError() {
                      swal.fire({
                          title: '¡Error!',
-                         text: "¡" + "Por Favor Verifique que los codigos no esten DUPLICADOS" + "!",
+                         text: "¡" + "Por Favor Verifique que los codigos no esten DUPLICADOS y Que el NUMERO de Departamento EXISTA" + "!",
                          type: 'error',
                          showConfirmButton: false,
                          allowOutsideClick: false,

@@ -54,11 +54,12 @@ namespace Electron.Views
                     this.con.Descripcion = this.txtdescripcion.Text;
                     this.con.Codigo_consola = int.Parse(this.txtcodigo.Text);
                     this.con.Tipo_Articulo = int.Parse(dp_tipo_articulo.SelectedValue.ToString());
+                    this.con.Id_Departamento = int.Parse(this.txtNumero_Departamento.Text);
                     this.con.Opc = 1;
                     this.consolaHelper = new ArticulosHelper(con);
                     this.consolaHelper.IngresarArticulo();
 
-              ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
+                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
 
 
                 }
