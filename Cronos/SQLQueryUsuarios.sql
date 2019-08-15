@@ -16,7 +16,11 @@ ADD CONSTRAINT AK_cedula UNIQUE (Cedula);
 GO 
 --------------------------
 alter procedure SPUsuario
+<<<<<<< Updated upstream
 	@opcion int, 
+=======
+	@opcion int,
+>>>>>>> Stashed changes
 	@Nombre varchar(20)= null,
 	@Apellido varchar(20)=null, 
 	@Apellido2 varchar (20)=null,
@@ -29,7 +33,11 @@ alter procedure SPUsuario
 	as
 	if @opcion = 1
 	begin
+<<<<<<< Updated upstream
 		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave)),@tipo)		
+=======
+		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario, convert(varchar(20),ENCRYPTBYPASSPHRASE('password', @Clave)),@tipo)
+>>>>>>> Stashed changes
 	end
 
 	if @opcion = 2
@@ -73,9 +81,18 @@ select * from Usuario
 ------------este update es para cambiar el tipo de minuscula ha mayuscula. debido a que envial estan en mayusculas.
 update Usuario set tipo='CLIENTE ' where tipo='Cliente' 
 ---------------------------------------------------------------------------------------------------------------------------------
+<<<<<<< Updated upstream
 insert into Usuario values(1,'leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','leo10'),'Administrador')
 insert into Usuario values(2,'calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
 insert into Usuario values(4,'keyssi','rivera','de lezcano','33333','key@','key',ENCRYPTBYPASSPHRASE('password','key3'),'Administrador')
+<<<<<<< Updated upstream
 insert into Usuario values('Michael','Arroyo','Valenzuela','989780','michael@','mike',ENCRYPTBYPASSPHRASE('password','m88'),'Cliente')
+=======
+
+=======
+insert into Usuario values('leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','le0'),'Administrador')
+insert into Usuario values('calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 -------------------------------------------------------------------------------------------------------------------
 
