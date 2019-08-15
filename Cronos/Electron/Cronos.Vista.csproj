@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,6 +71,7 @@
     <Content Include="Views\Agregar_Articulos.aspx" />
     <Content Include="Views\Agregar_Departamentos.aspx" />
     <Content Include="Views\Consolas.aspx" />
+    <Content Include="Views\VideoJuegos.aspx" />
     <Content Include="Views\css\sb-admin-2.css" />
     <Content Include="Views\css\sb-admin-2.min.css" />
     <Content Include="Views\img\electronica.png" />
@@ -1709,6 +1711,13 @@
     </Compile>
     <Compile Include="Views\Consolas.aspx.designer.cs">
       <DependentUpon>Consolas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VideoJuegos.aspx.cs">
+      <DependentUpon>VideoJuegos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VideoJuegos.aspx.designer.cs">
+      <DependentUpon>VideoJuegos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Inicio.Master.cs">
       <DependentUpon>Inicio.Master</DependentUpon>

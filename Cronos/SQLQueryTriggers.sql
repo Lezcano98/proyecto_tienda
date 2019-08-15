@@ -53,5 +53,5 @@ DECLARE @Id_Departamento INT
 		SET @Precio_articulo = (SELECT Precio_articulo FROM deleted)
 		SET @nombre_deArticulo = (SELECT nombre_deArticulo FROM deleted)
 		SET @Id_Departamento = (SELECT Id_Departamentos FROM deleted)
-		INSERT INTO BITACORA VALUES (@Codigo_Articulo, @Descripcion_Articulo, @Precio_articulo, @nombre_deArticulo, @Id_Departamento, GETDATE(), 'INSERTADO', 'ARTICULOS')
+		INSERT INTO BITACORA VALUES (@Codigo_Articulo, @Descripcion_Articulo, @Precio_articulo, @nombre_deArticulo, @Id_Departamento, GETDATE(), 'BORRADO', 'ARTICULOS')
 	END

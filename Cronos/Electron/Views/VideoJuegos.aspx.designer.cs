@@ -10,7 +10,7 @@
 namespace Electron.Views {
     
     
-    public partial class Consolas1 {
+    public partial class Consolas {
         
         /// <summary>
         /// Control GridView1.
@@ -22,12 +22,12 @@ namespace Electron.Views {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control SqlDataConsolas.
+        /// Control SqlDataVideoJuegos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataConsolas;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataVideoJuegos;
     }
 }

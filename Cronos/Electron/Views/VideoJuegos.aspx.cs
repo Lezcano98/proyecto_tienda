@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Electron.Views
 {
-    public partial class Consolas1 : System.Web.UI.Page
+    public partial class Consolas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
