@@ -52,7 +52,6 @@ namespace Electron.Views
                     this.con.Imagen_consola = flcargarArchivo.FileBytes;
                     this.con.Precio = int.Parse(this.txtprecioconsola.Text);
                     this.con.Descripcion = this.txtdescripcion.Text;
-                    this.con.Codigo_consola = int.Parse(this.txtcodigo.Text);
                     this.con.Tipo_Articulo = int.Parse(dp_tipo_articulo.SelectedValue.ToString());
                     this.con.Id_Departamento = int.Parse(this.txtNumero_Departamento.Text);
                     this.con.Opc = 1;

@@ -51,13 +51,6 @@
                 </asp:DropDownList>
                 <br />
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label5" runat="server" ForeColor="Black" Text="Codigo del Articulo"></asp:Label>
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtcodigo" runat="server"></asp:TextBox>
-                <br />
-                <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label7" runat="server" ForeColor="Black" Text="Numero del Departamento al cual se Ingresara"></asp:Label>
                 <br />

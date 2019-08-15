@@ -1,8 +1,10 @@
 select * from Articulo
 select * from Departamentos
+select * from Bitacora
 
-delete Articulo where Departamentos = 1
-delete Departamentos where Id_Departamentos = 1
+delete Articulo where Codigo_Articulo= 2
+delete Departamentos where Estado_Departamento = 1
+delete Bitacora where consecutivo_Entrada = 10
 
 insert into Departamentos values ('consola',1)
 insert into Departamentos values ('video juego',2)
@@ -16,9 +18,6 @@ alter table Articulo
 add constraint fk_Id_Departamentos foreign key (Departamentos) references Departamentos(Id_Departamentos)
 DBCC CHECKIDENT (Departamentos, RESEED,0)
 
-alter table Articulo
-add Primary key (Departamentos)
-
 
 create table Articulo
 (
@@ -31,3 +30,10 @@ Tipo_Articulo int not null,
 Departamentos int not null,
 Primary key (Codigo_Articulo, Departamentos)
 )
+
+alter table Articulo
+add Primary key (Codigo_Articulo, Departamentos)
+
+
+select * from Articulo
+select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre from Articulo where Tipo_Articulo=2

@@ -15,18 +15,16 @@ namespace Cronos.Controlador
         public byte[] imagen_consola;
         public int precio;
         public string descripcion;
-        public int codigo_consola;
         public int tipo_Articulo;
         public int id_Departamento;
 
-        public Articulos(int opc, string nombre_consola, byte[] imagen_consola, int precio, string descripcion, int codigo_consola,int tipo_Articulo,int id_Departamento)
+        public Articulos(int opc, string nombre_consola, byte[] imagen_consola, int precio, string descripcion,int tipo_Articulo,int id_Departamento)
         {
             this.opc = opc;
             this.nombre_consola = nombre_consola;
             this.imagen_consola = imagen_consola;
             this.precio = precio;
             this.descripcion = descripcion;
-            this.codigo_consola = codigo_consola;
             this.tipo_Articulo = tipo_Articulo;
             this.id_Departamento = id_Departamento;
         }
@@ -37,7 +35,6 @@ namespace Cronos.Controlador
             //this.imagen_consola = 0;
             this.precio = 0;
             this.descripcion = "";
-            this.codigo_consola = 0;
             this.tipo_Articulo = 0;
             this.id_Departamento = 0;
         }
@@ -47,7 +44,6 @@ namespace Cronos.Controlador
         public byte[] Imagen_consola { get => imagen_consola; set => imagen_consola = value; }
         public int Precio { get => precio; set => precio = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Codigo_consola { get => codigo_consola; set => codigo_consola = value; }
         public int Tipo_Articulo { get => tipo_Articulo; set => tipo_Articulo = value; }
         public int Id_Departamento { get => id_Departamento; set => id_Departamento = value; }
     }
