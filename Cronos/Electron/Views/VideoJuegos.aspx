@@ -12,31 +12,47 @@
         <tr>
             
             <td class="auto-style1">
-                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos">
+                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
+                        <asp:CommandField ShowSelectButton="True" />
                         <asp:TemplateField HeaderText="Imagen">
-             <ItemTemplate>
-                 <a href="#" <%--data-toggle="modal" data-target="#exampleModal"--%>>
+                             <ItemTemplate>
+                 <a href="#" data-toggle="modal" data-target="#exampleModal">
                     <asp:Image ID="Image1" runat="server" Width="300px" Height="300px" ImageUrl='<%#"data:Image/png;base64,"+Convert.ToBase64String ((byte [])Eval("Imagen")) %>' />
                  </a>
             </ItemTemplate>
                         </asp:TemplateField>
-
-
+                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                        <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                        <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" />
                     </Columns>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataVideoJuegos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
+                
+                <asp:Label ID="lbl_estado" runat="server"></asp:Label>
+                
+                <asp:SqlDataSource ID="SqlDataVideoJuegos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
             </td>
         </tr>
     </table>
 
-                                <%-- creacion de la ventana modal --%>
+<%--                                <%-- creacion de la ventana modal --%>
     <!-- Button trigger modal -->
 <%--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Comprar
 </button>--%>
 <!-- Modal -->
-<%--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,13 +65,15 @@
         Ingrese la cantidad: <asp:TextBox ID="txtcantidad" runat="server"></asp:TextBox>
       </div>
       <div class="modal-footer">
-          <asp:Button ID="btncomprar" runat="server" OnClick="btncomprar_Click" Text="Comprar" class="btn btn-primary" data-dismiss="modal" />
-        <%--<button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
+          <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary"  />
+       <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
+
+          <%--data-dismiss="modal"--%>
         <button type="button" class="btn btn-secondary" >Cancelar</button>
       </div>
     </div>
   </div>
-</div>--%>
+</div>
 <%-- fin de la ventana modal  --%>
 
 

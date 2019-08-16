@@ -14,7 +14,7 @@ namespace Cronos.Controlador
         public string departamento;
         public string articulo;
         public string descripcion;
-        public int precio;
+        public string precio;
         public int cantidad;
         /// atributos pra el ingreso de la factura 
         public int codigo_Articulo;
@@ -22,8 +22,9 @@ namespace Cronos.Controlador
         public double subtotal;
         public double iVA;
         public string usuario;
+        public double total_pagar;
 
-        public Compras(int opc, DateTime fecha_compra, string departamento, string articulo, string descripcion, int precio, int cantidad, int codigo_Articulo, double descuento, double subtotal, double iVA, string usuario)
+        public Compras(int opc, DateTime fecha_compra, string departamento, string articulo, string descripcion, string precio, int cantidad, int codigo_Articulo, double descuento, double subtotal, double iVA, string usuario, double total_pagar)
         {
             this.opc = opc;
             this.fecha_compra = fecha_compra;
@@ -37,6 +38,7 @@ namespace Cronos.Controlador
             this.subtotal = subtotal;
             this.iVA = iVA;
             this.usuario = usuario;
+            this.total_pagar=total_pagar;
         }
         public Compras()
         {
@@ -45,13 +47,14 @@ namespace Cronos.Controlador
             this.departamento = "";
             this.articulo = "";
             this.descripcion = "";
-            this.precio = 0;
+            this.precio = "";
             this.cantidad = 0;
             this.codigo_Articulo = 0;
             this.descuento = 0.0;
             this.subtotal = 0.0;
             this.iVA = 0.0;
             this.usuario = "";
+            this.total_pagar = 0.0;
         }
 
         public int Opc { get => opc; set => opc = value; }
@@ -59,12 +62,13 @@ namespace Cronos.Controlador
         public string Departamento { get => departamento; set => departamento = value; }
         public string Articulo { get => articulo; set => articulo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Precio { get => precio; set => precio = value; }
+        public string Precio { get => precio; set => precio = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public int Codigo_Articulo { get => codigo_Articulo; set => codigo_Articulo = value; }
         public double Descuento { get => descuento; set => descuento = value; }
         public double Subtotal { get => subtotal; set => subtotal = value; }
         public double IVA { get => iVA; set => iVA = value; }
         public string Usuario { get => usuario; set => usuario = value; }
+        public double Total_pagar { get => total_pagar; set => total_pagar = value; }
     }
 }

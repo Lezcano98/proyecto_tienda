@@ -27,7 +27,7 @@ namespace Cronos.Controlador
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[12];
+                SqlParameter[] parParameter = new SqlParameter[13];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -59,7 +59,8 @@ namespace Cronos.Controlador
 
                 parParameter[5] = new SqlParameter();
                 parParameter[5].ParameterName = "@Precio";
-                parParameter[5].SqlDbType = SqlDbType.Money;
+                parParameter[5].SqlDbType = SqlDbType.VarChar;
+                parParameter[5].Size = 50;
                 parParameter[5].SqlValue = objcompras.Precio;
 
                 parParameter[6] = new SqlParameter();
@@ -92,6 +93,11 @@ namespace Cronos.Controlador
                 parParameter[11].SqlDbType = SqlDbType.VarChar;
                 parParameter[11].Size = 50;
                 parParameter[11].SqlValue = objcompras.Usuario;
+
+                parParameter[12] = new SqlParameter();
+                parParameter[12].ParameterName = "@totla_pagra";
+                parParameter[12].SqlDbType = SqlDbType.Decimal;
+                parParameter[12].SqlValue = objcompras.Total_pagar;
 
 
                 cnGeneral.EjecutarSP(parParameter,"Insertar_Compras");
