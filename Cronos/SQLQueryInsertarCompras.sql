@@ -39,7 +39,7 @@ alter procedure Insertar_Compras
 	DBCC CHECKIDENT (Informacion_Factura, RESEED,0)
 
 -------------------------------------------------
-	select * from Usuario
+	select * from Articulo
 alter table Articulo
 add constraint fk_Arti foreign key (Codigo_Compras) references Compras(Codigo)
 
@@ -49,8 +49,10 @@ add constraint fk_Comparas foreign key (Cod_Articulo) references Compras(Codigo)
 alter table Informacion_Factura
 add constraint fk_info foreign key (Usuario) references Usuario(Codigo_Usuario)
 
-select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=2
+select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=1
 
-
+delete  Articulo where Codigo_Articulo=505
 --alter table Compras
 --add primary key(Codigo,codigo_Articulo)
+
+select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario 

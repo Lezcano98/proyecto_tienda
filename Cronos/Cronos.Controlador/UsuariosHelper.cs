@@ -28,7 +28,7 @@ namespace Cronos.Controlador
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[3];
+                SqlParameter[] parParameter = new SqlParameter[4];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -47,6 +47,12 @@ namespace Cronos.Controlador
                 parParameter[2].SqlDbType = SqlDbType.VarChar;
                 parParameter[2].Size = 50;
                 parParameter[2].SqlValue = objusuarios.Clave;
+
+                parParameter[3] = new SqlParameter();
+                parParameter[3].ParameterName = "@tipo";
+                parParameter[3].SqlDbType = SqlDbType.VarChar;
+                parParameter[3].Size = 20;
+                parParameter[3].SqlValue = objusuarios.Tipo;
 
                 //para  mi proceso almacenado USUARIO
                 tblDatos = cnGeneral.RetornaTabla(parParameter,"SPValida");

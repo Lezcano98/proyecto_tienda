@@ -113,9 +113,6 @@ C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\bin\Cronos.Modelo.dll
 C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\bin\Cronos.Controlador.pdb
 C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\bin\Cronos.Modelo.pdb
-C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csprojAssemblyReference.cache
-C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csproj.CopyComplete
 C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Electron.dll
 C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Electron.pdb
 C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Electron\bin\Electron.dll.config
@@ -178,3 +175,6 @@ C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Electron\obj\Deb
 C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csproj.CopyComplete
 C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Electron\obj\Debug\Electron.dll
 C:\Users\leona\Desktop\Progra 6\Proyecto\proyecto_tienda\Cronos\Electron\obj\Debug\Electron.pdb
+C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\proyecto_tienda\Cronos\Electron\obj\Debug\Cronos.Vista.csproj.CopyComplete

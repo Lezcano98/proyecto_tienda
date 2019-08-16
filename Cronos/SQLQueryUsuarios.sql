@@ -59,7 +59,8 @@ alter procedure SPUsuario
 alter procedure SPValida
 @opcion int,
 @Nombre_Usuario varchar(20)=null, 
-@Clave varchar(max)=null
+@Clave varchar(max)=null,
+@tipo varchar(20)=null
 as
 -- declaracion de variables para almacenar los datos a desencriptar
 declare @encriptado as Nvarchar (max)
@@ -74,6 +75,10 @@ set @desencriptado=convert(varchar(max),DECRYPTBYPASSPHRASE('password',@encripta
 select *from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado 
 --- este otro select tambien funciona 
 --select Nombre,Apellido,Nombre_Usuario,Tipo,Clave=convert(varchar(max),DECRYPTBYPASSPHRASE('password',Clave)) from Usuario where Nombre_Usuario=@Nombre_Usuario and @Clave=@desencriptado
+end
+if @opcion=2
+begin
+select tipo from Usuario
 end
 --------------------------------------------------------------------------------------------------------------------
 delete Usuario where Codigo_Usuario=16
