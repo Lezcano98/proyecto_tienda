@@ -63,9 +63,9 @@ namespace Electron.Views
 
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    this.txtdescripcion.Text = ex.Message;
+             
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
                 }
 

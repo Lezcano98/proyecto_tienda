@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="ArticulosHelper.cs" />
     <Compile Include="Articulos.cs" />
+    <Compile Include="Compras.cs" />
+    <Compile Include="ComprasHelper.cs" />
     <Compile Include="Correos.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DepartamentosHelper.cs" />
