@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="Views\Agregar_Articulos.aspx" />
     <Content Include="Views\Agregar_Departamentos.aspx" />
+    <Content Include="Views\Bitacora.aspx" />
     <Content Include="Views\Consolas.aspx" />
     <Content Include="Views\Factura.aspx" />
     <Content Include="Views\img\WhatsApp Image 2019-08-16 at 8.21.05 PM.jpeg" />
@@ -1706,6 +1707,13 @@
     </Compile>
     <Compile Include="Views\Agregar_Departamentos.aspx.designer.cs">
       <DependentUpon>Agregar_Departamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Bitacora.aspx.cs">
+      <DependentUpon>Bitacora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Bitacora.aspx.designer.cs">
+      <DependentUpon>Bitacora.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Consolas.aspx.cs">
       <DependentUpon>Consolas.aspx</DependentUpon>

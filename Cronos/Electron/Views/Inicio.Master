@@ -75,6 +75,7 @@
             <a class="collapse-item" href="Registrar_Usu.aspx">USUARIOS</a>
             <a class="collapse-item" href="Agregar_Departamentos.aspx">DEPARTAMENTOS</a>
             <a class="collapse-item" href="Agregar_Articulos.aspx">ARTICULO</a>
+              <a class="collapse-item" href="Bitacora.aspx">BITACORA</a>
          
           </div>
         </div>

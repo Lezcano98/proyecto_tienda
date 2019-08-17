@@ -85,5 +85,40 @@ namespace Cronos.Controlador
         }
 
 
+        public DataTable BusquedaArticulo()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objconsolas.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@nombre_deArticulo";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 20;
+                parParameter[1].SqlValue = objconsolas.Nombre_consola;
+
+                //para  mi proceso almacenado cliente
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPBusqueda");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
+
     }
 }

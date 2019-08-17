@@ -2,30 +2,45 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 257px;
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            height: 218px;
         }
         .auto-style2 {
             width: 100%;
-            height: 1636px;
+            height: 77px;
+        }
+        .auto-style3 {
+            width: 498px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <table class="auto-style2">
-        <tr>
-            <div class="input-group">
-              <asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2"></asp:TextBox>
-               
-              <div class="input-group-append">
-                <%--<button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>--%>
-              </div>
-            </div>
-            <td class="auto-style1">
-                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
-                    <AlternatingRowStyle BackColor="White" />
+    <%--<table class="auto-style2">
+        <tr>--%>
+            <div class="auto-style1">
+                             <div class="input-group-append">
+                                 <table class="auto-style2">
+                                     <tr>
+                                         <td class="text-center">
+              <%--<asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2" AutoPostBack="True" Width="659px"></asp:TextBox>--%>
+                                             <br />
+                                             <table class="w-100">
+                                                 <tr>
+                                                     <td>&nbsp;</td>
+                                                     <td class="auto-style3">
+                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" Height="771px" Width="685px">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:TemplateField HeaderText="Imagen">
@@ -40,24 +55,35 @@
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                         <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" />
                     </Columns>
-                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                    <SortedDescendingHeaderStyle BackColor="#820000" />
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
+                 
+                  
+                                                     </td>
+                                                     <td>&nbsp;</td>
+                                                 </tr>
+                                             </table>
+                                         </td>
+                                     </tr>
+                                 </table>
+              </div>
+            </div>
+            <td class="auto-style1">
                  
                   
                 <asp:Label ID="lbl_estado" runat="server"></asp:Label>
                 
                 <asp:SqlDataSource ID="SqlDataVideoJuegos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
-            </td>
+            <%--</td>
         </tr>
-    </table>
+    </table>--%>
 
 <%--                                <%-- creacion de la ventana modal --%>
     <!-- Button trigger modal -->

@@ -8,13 +8,15 @@ using System.Web.UI.WebControls;
 using Cronos.Controlador;
 using System.Data;
 
-
 namespace Electron.Views
 {
     public partial class Consolas : System.Web.UI.Page
     {
         private Compras cp;
         private ComprasHelper cph;
+        private Articulos at;
+        private ArticulosHelper ath;
+        private DataTable datos;
 
         // variables estaticas que me acumlan los valores del gridviews
         public static string nombreA;
@@ -72,7 +74,22 @@ namespace Electron.Views
 
         protected void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            SqlDataVideoJuegos.Select();
+            //try
+            //{
+               
+            //    datos = (DataTable)slqDataVideojuegos.DataSource;
+            //    this.at = new Articulos();
+            //    this.at.Nombre_consola = this.txtbuscar.Text;
+            //    this.at.opc = 1;
+            //    this.ath = new ArticulosHelper(at);
+            //    this.datos = new DataTable();
+            //    this.GridView1.DataSource= this.ath.BusquedaArticulo();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    this.txtbuscar.Text = ex.Message;              
+            //}
         }
     }
 }

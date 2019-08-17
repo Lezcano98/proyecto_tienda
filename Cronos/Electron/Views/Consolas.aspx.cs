@@ -47,6 +47,7 @@ namespace Electron.Views
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
+                Response.Redirect("Factura.aspx");
 
 
                 this.lbl_estado.Text = "compra exitosa";
