@@ -18,6 +18,13 @@ namespace Electron
         {
            
             this.lblingresado.Text = Usuarios.NonbreyApellido;
+
+            string valid = Usuarios.TipoUsu;
+
+            if (valid == null || valid == "CLIENTE" || valid != "ADMINISTRADOR ")
+            {
+                Response.Redirect("LOGING.aspx");
+            }
         }
     }
 }

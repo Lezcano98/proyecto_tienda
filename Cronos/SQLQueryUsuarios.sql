@@ -101,3 +101,4 @@ insert into Usuario values('calor','lezcano','montoya','111111','carlos@','lezca
 >>>>>>> Stashed changes
 -------------------------------------------------------------------------------------------------------------------
 
+select a.Usuario, a.Fecha, b.Codigo_Articulo as CodigoArticulo, b.Precio_Articulo as PrecioArticulo, b.Cantidad, b.Descuento, b.Subtotal, b.IVA, b.total_pagar as Total from Informacion_Factura a, Pago_Factura b

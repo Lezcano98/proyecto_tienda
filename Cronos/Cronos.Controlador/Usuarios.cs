@@ -22,6 +22,7 @@ namespace Cronos.Controlador
         public string tipo;
         // esta variable es para almacenar el nombre y el apellido y poderlo mostrar en el perfil ingresado
         public static string nonbreyApellido;
+        public static string tipoUsu;
         public int Opc { get => opc; set => opc = value; }
         public  string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
@@ -32,6 +33,7 @@ namespace Cronos.Controlador
         public string Clave { get => clave; set => clave = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public static string NonbreyApellido { get => nonbreyApellido; set => nonbreyApellido = value; }
+        public static string TipoUsu { get => tipoUsu; set => tipoUsu = value; }
 
         public Usuarios(int opc, string nombre, string apellido, string apellido2, string cedula, string correo, string nombre_usuario, string clave, string tipo)
         {
@@ -62,6 +64,9 @@ namespace Cronos.Controlador
         {
             nonbreyApellido = nombreresgitrado;
         }
-
+        public static void setTipo(string tipo_restriccion)
+        {
+            tipoUsu = tipo_restriccion;
+        }
     }
     }

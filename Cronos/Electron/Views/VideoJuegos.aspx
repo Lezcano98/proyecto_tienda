@@ -10,7 +10,14 @@
 
     <table class="w-100">
         <tr>
-            
+            <div class="input-group">
+              <input type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <%--<button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>--%>
+              </div>
+            </div>
             <td class="auto-style1">
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
                     <AlternatingRowStyle BackColor="White" />

@@ -38,18 +38,21 @@ namespace Electron
                 if (datos.Rows.Count>=0)
                 {
                     DataRow fila = datos.Rows[0];
-                  
-                    if (fila["tipo"].ToString() =="ADMINISTRADOR ")
+
+                    Usuarios.setTipo(fila["tipo"].ToString());
+
+                    if (fila["tipo"].ToString()== "ADMINISTRADOR ")
                     {
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                         Response.Redirect("principal.aspx");
-                    }
-                    else if (fila["tipo"].ToString() =="CLIENTE")
-                    {
 
+                    }
+                    else if (fila["tipo"].ToString()=="CLIENTE")
+                    {
+                       
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                         Response.Redirect("Principal2.aspx");
-
+                      
                     }
 
                 }

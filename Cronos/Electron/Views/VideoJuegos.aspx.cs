@@ -23,7 +23,7 @@ namespace Electron.Views
         public static int codigo;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btningresar_Click(object sender, EventArgs e)

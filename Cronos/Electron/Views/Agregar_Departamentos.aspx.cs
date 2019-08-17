@@ -17,7 +17,12 @@ namespace Electron.Views
         private DataTable datos;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string valid = Usuarios.TipoUsu;
 
+            if (valid == null || valid == "CLIENTE" || valid != "ADMINISTRADOR ")
+            {
+                Response.Redirect("LOGING.aspx");
+            }
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)

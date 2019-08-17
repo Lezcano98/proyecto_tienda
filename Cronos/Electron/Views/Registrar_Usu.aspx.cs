@@ -22,36 +22,11 @@ namespace Electron.Views
         private UsuariosHelper usuHelper;
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            string valid=Usuarios.TipoUsu;
+
+            if (valid == null || valid == "CLIENTE" || valid != "ADMINISTRADOR ")
             {
-               this.usu = new Usuarios();
-
-                //this.usuarios.Nombre_usuario = this.txtnombreusuario.Text;
-                //this.usuarios.Clave = this.txtclave.Text;
-                //// uso de la opcion del proceso almacenado
-                this.usuHelper = new UsuariosHelper(usu);
-                this.datos = new DataTable();
-                this.datos = this.usuHelper.validarusuario();
-                this.usu.Opc = 1;
-                if (datos.Rows.Count >= 0)
-                {
-                    DataRow fila = datos.Rows[0];
-
-                    if (fila["tipo"].ToString() == "CLIENTE")
-                    {
-
-                        //Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
-                        Response.Redirect("Principal2.aspx");
-
-                    }
-
-                }
-
-            }
-            catch (Exception)
-            {
-
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                Response.Redirect("LOGING.aspx");
             }
         }
         // metodo para crear las claves de forma aleatoria;
