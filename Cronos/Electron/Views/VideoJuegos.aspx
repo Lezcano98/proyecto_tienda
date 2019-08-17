@@ -4,14 +4,19 @@
         .auto-style1 {
             width: 257px;
         }
+        .auto-style2 {
+            width: 100%;
+            height: 1636px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <table class="w-100">
+    <table class="auto-style2">
         <tr>
             <div class="input-group">
-              <input type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2">
+              <asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2"></asp:TextBox>
+               
               <div class="input-group-append">
                 <%--<button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
@@ -45,7 +50,8 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
                 </asp:GridView>
-                
+                 
+                  
                 <asp:Label ID="lbl_estado" runat="server"></asp:Label>
                 
                 <asp:SqlDataSource ID="SqlDataVideoJuegos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
@@ -63,7 +69,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Desea Comprar este Articulo?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">¿Desea Comprar este Articulo?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,9 +78,8 @@
         Ingrese la cantidad: <asp:TextBox ID="txtcantidad" runat="server"></asp:TextBox>
       </div>
       <div class="modal-footer">
-          <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary"  />
+          <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary"/>
        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
-
           <%--data-dismiss="modal"--%>
         <button type="button" class="btn btn-secondary" >Cancelar</button>
       </div>

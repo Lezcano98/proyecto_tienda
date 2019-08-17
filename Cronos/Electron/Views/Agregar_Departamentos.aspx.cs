@@ -69,5 +69,10 @@ namespace Electron.Views
                 }
             }
         }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

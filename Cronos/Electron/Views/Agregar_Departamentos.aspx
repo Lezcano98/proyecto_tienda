@@ -53,7 +53,37 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Id_Departamentos" DataSourceID="SqlDataDepartamenos" GridLines="Horizontal" Width="307px">
+                        <AlternatingRowStyle BackColor="#F7F7F7" />
+                        <Columns>
+                            <asp:BoundField DataField="Id_Departamentos" HeaderText="Id Departamentos" InsertVisible="False" ReadOnly="True" SortExpression="Id_Departamentos" />
+                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                            <asp:BoundField DataField="Estado_Departamento" HeaderText="Estado Departamento" SortExpression="Estado_Departamento" />
+                            <asp:BoundField HeaderText="Activo"/>   
+                            <asp:TemplateField>
+                         <ItemTemplate>
+                            <asp:CheckBox ID="chbItem" runat="server"/>
+                       </ItemTemplate>
+                       </asp:TemplateField>
+                         
+                        </Columns>
+                     
+                        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                        <PagerTemplate>
+                            <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" />
+                        </PagerTemplate>
+                        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        <SortedAscendingCellStyle BackColor="#F4F4FD" />
+                        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+                        <SortedDescendingCellStyle BackColor="#D8D8F0" />
+                        <SortedDescendingHeaderStyle BackColor="#3E3277" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataDepartamenos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="SELECT * FROM [Departamentos]"></asp:SqlDataSource>
+                </td>
             </tr>
         </table>
     </p>

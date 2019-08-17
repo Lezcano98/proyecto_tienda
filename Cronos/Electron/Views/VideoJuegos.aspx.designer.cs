@@ -13,6 +13,15 @@ namespace Electron.Views {
     public partial class Consolas {
         
         /// <summary>
+        /// Control txtbuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbuscar;
+        
+        /// <summary>
         /// Control GridView1.
         /// </summary>
         /// <remarks>

@@ -51,8 +51,8 @@ namespace Electron.Views
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
 
-
                 this.lbl_estado.Text = "compra exitosa";
+                Response.Redirect("Factura.aspx");
 
             }
             catch (Exception ex)
@@ -68,6 +68,11 @@ namespace Electron.Views
             precio = this.GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
             nombreA = this.GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
             codigo = int.Parse(this.GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text);
+        }
+
+        protected void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            SqlDataVideoJuegos.Select();
         }
     }
 }

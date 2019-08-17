@@ -102,3 +102,12 @@ insert into Usuario values('calor','lezcano','montoya','111111','carlos@','lezca
 -------------------------------------------------------------------------------------------------------------------
 
 select a.Usuario, a.Fecha, b.Codigo_Articulo as CodigoArticulo, b.Precio_Articulo as PrecioArticulo, b.Cantidad, b.Descuento, b.Subtotal, b.IVA, b.total_pagar as Total from Informacion_Factura a, Pago_Factura b
+
+select*from Compras
+delete Informacion_Factura where Usuario='carlos lezcano'
+
+select*from Pago_Factura
+select * from Articulo
+select * from Informacion_Factura
+DBCC CHECKIDENT (Pago_Factura, RESEED,0)
+select Estado_Departamento from Departamentos

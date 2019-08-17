@@ -26,6 +26,9 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body class="bg-gradient-primary1">
+    <br>
+    <br>
+    <br>
     <form id="form1" runat="server">
         <div>
         <div class="container">
@@ -45,7 +48,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">BIENVENIDO!</h1>
                   </div>
-                  <form class="user">
+                 <%-- <form class="user">--%>
                     <div class="form-group">
                      <asp:TextBox id="txtnombreusuario" class="form-control form-control-user" type="text" runat="Server" name="usuario" placeholder="ingrese su usuario" required=""> </asp:TextBox>
                     </div>
@@ -55,13 +58,13 @@
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                       <%-- <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">RECORDAR MI CONTRASEÑA</label>
                       </div>
-                    </div>
+                    </div>--%>
                     <asp:Button class="btn btn-primary btn-user btn-block" ID="btningresar" runat="server" Text="INGRESAR" OnClick="btningresar_Click">     
                     </asp:Button>
-                    <hr>
+                   <%-- <hr>
                     <a href="index.html" class="btn btn-google btn-user btn-block">
                      REGISTRARSE CON GOOGLE  <br><i class="fab fa-google fa-fw"></i> 
                     </a>
@@ -75,7 +78,7 @@
                   </div>
                   <div class="text-center">
                     <a class="small" href="register.html">CREAR UNA CUENTA</a>
-                  </div>
+                  </div>--%>
                 </div>
          
 
