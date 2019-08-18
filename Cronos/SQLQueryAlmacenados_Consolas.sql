@@ -53,4 +53,4 @@ if @opcion=1
 	end
 end
 
-select * from 
+select * from Usuario

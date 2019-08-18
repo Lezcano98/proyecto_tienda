@@ -74,6 +74,7 @@
     <Content Include="Views\Consolas.aspx" />
     <Content Include="Views\Factura.aspx" />
     <Content Include="Views\img\WhatsApp Image 2019-08-16 at 8.21.05 PM.jpeg" />
+    <Content Include="Views\Perfil.aspx" />
     <Content Include="Views\VideoJuegos.aspx" />
     <Content Include="Views\css\sb-admin-2.css" />
     <Content Include="Views\css\sb-admin-2.min.css" />
@@ -1728,6 +1729,13 @@
     </Compile>
     <Compile Include="Views\Factura.aspx.designer.cs">
       <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\VideoJuegos.aspx.cs">
       <DependentUpon>VideoJuegos.aspx</DependentUpon>
