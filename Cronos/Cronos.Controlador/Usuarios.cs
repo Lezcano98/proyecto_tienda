@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 namespace Cronos.Controlador
 {
-   public  class Usuarios
+    public class Usuarios
     {
         // opc es la opcion que se genera en el proceso almacenado.
         public int opc;
@@ -20,11 +20,14 @@ namespace Cronos.Controlador
         public string nombre_usuario;
         public string clave;
         public string tipo;
-        // esta variable es para almacenar el nombre y el apellido y poderlo mostrar en el perfil ingresado
+        // esta variable globales son para capturara valores que se denben utilizar en los diferentes modulos, 
+        //pero que a nivel de usuario no se deben insetar(solo capturar el valor)
         public static string nonbreyApellido;
         public static string tipoUsu;
+        public static string cedulaActualizar;
+        public static string correoCompra;
         public int Opc { get => opc; set => opc = value; }
-        public  string Nombre { get => nombre; set => nombre = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Apellido2 { get => apellido2; set => apellido2 = value; }
         public string Cedula { get => cedula; set => cedula = value; }
@@ -34,6 +37,8 @@ namespace Cronos.Controlador
         public string Tipo { get => tipo; set => tipo = value; }
         public static string NonbreyApellido { get => nonbreyApellido; set => nonbreyApellido = value; }
         public static string TipoUsu { get => tipoUsu; set => tipoUsu = value; }
+        public static string CedulaActualizar { get => cedulaActualizar; set => cedulaActualizar = value; }
+        public static string CorreoCompra { get => correoCompra; set => correoCompra = value; }
 
         public Usuarios(int opc, string nombre, string apellido, string apellido2, string cedula, string correo, string nombre_usuario, string clave, string tipo)
         {
@@ -59,7 +64,7 @@ namespace Cronos.Controlador
             this.clave = "";
             this.tipo = "";
         }
-
+        // con estos metodos capturo los valores que ingresne a los get y set 
         public static void Setnombre(string nombreresgitrado)
         {
             nonbreyApellido = nombreresgitrado;
@@ -68,5 +73,15 @@ namespace Cronos.Controlador
         {
             tipoUsu = tipo_restriccion;
         }
+
+        public static void setCedula (string cedulaActualiza) { 
+            cedulaActualizar = cedulaActualiza;
+          }
+        public static void setCorreo(string correos) {
+            CorreoCompra = correos;
+        }
+
+
     }
+
     }

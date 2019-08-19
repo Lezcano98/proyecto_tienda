@@ -22,6 +22,10 @@
         }
         .auto-style3 {
             width: 498px;
+            margin-left: 40px;
+        }
+        .auto-style4 {
+            width: 143px;
         }
     </style>
 </asp:Content>
@@ -34,13 +38,13 @@
                                  <table class="auto-style2">
                                      <tr>
                                          <td class="text-center">
-              <%--<asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2" AutoPostBack="True" Width="659px"></asp:TextBox>--%>
+          <%--    <asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2" AutoPostBack="True" Width="659px"></asp:TextBox>--%>
                                              <br />
                                              <table class="w-100">
                                                  <tr>
-                                                     <td>&nbsp;</td>
+                                                     <td class="auto-style4">&nbsp;</td>
                                                      <td class="auto-style3">
-                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataVideoJuegos" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" Height="771px" Width="685px">
+                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" Height="260px" Width="685px" DataSourceID="SqlDataVideoJuegos">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:TemplateField HeaderText="Imagen">
@@ -70,6 +74,19 @@
                                                      <td>&nbsp;</td>
                                                  </tr>
                                              </table>
+                                             <table class="w-100">
+                                                 <tr>
+                                                     <td>&nbsp;</td>
+                                                     <td>
+                 
+                  
+                <asp:Label ID="lbl_estado" runat="server"></asp:Label>
+                
+                                                     </td>
+                                                     <td>&nbsp;</td>
+                                                 </tr>
+                                             </table>
+                                             <br />
                                          </td>
                                      </tr>
                                  </table>
@@ -78,8 +95,6 @@
             <td class="auto-style1">
                  
                   
-                <asp:Label ID="lbl_estado" runat="server"></asp:Label>
-                
                 <asp:SqlDataSource ID="SqlDataVideoJuegos" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select Descripcion_articulo as Descripcion,Precio_articulo as Precio,imagen as Imagen,nombre_deArticulo as Nombre,Codigo_Articulo as codigo from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
             <%--</td>
         </tr>
@@ -115,4 +130,4 @@
 <%-- fin de la ventana modal  --%>
 
 
-</asp:Content>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:Content>

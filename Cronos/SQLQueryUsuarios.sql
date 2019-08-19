@@ -14,18 +14,18 @@
 ALTER TABLE Usuario  
 ADD CONSTRAINT AK_cedula UNIQUE (Cedula);   
 GO 
+
+ALTER TABLE Usuario  
+ADD CONSTRAINT AK_NombreUsuario UNIQUE (Nombre_Usuario);   
+GO 
 --------------------------
 alter procedure SPUsuario
-<<<<<<< Updated upstream
 	@opcion int, 
-=======
-	@opcion int,
->>>>>>> Stashed changes
 	@Nombre varchar(20)= null,
 	@Apellido varchar(20)=null, 
 	@Apellido2 varchar (20)=null,
 	@Cedula varchar(9)= null, 
-	@Correo varchar(20)=null,
+	@Correo varchar(50)=null,
 	@Nombre_Usuario varchar(20)=null,
 	@Clave varchar(max) =null,
 	@tipo varchar(20) =null
@@ -33,11 +33,8 @@ alter procedure SPUsuario
 	as
 	if @opcion = 1
 	begin
-<<<<<<< Updated upstream
+
 		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario,CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave)),@tipo)		
-=======
-		insert into Usuario values(@Nombre,@Apellido,@Apellido2,@Cedula,@Correo,@Nombre_Usuario, convert(varchar(20),ENCRYPTBYPASSPHRASE('password', @Clave)),@tipo)
->>>>>>> Stashed changes
 	end
 
 	if @opcion = 2
@@ -52,7 +49,7 @@ alter procedure SPUsuario
 
 	if @opcion = 4
 	begin
-		update Usuario set Nombre = @Nombre,Apellido = @Apellido,Apellido2=@Apellido2,Correo=@Correo,Nombre_Usuario=@Nombre_Usuario,Clave=CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave)),Tipo=@tipo where Cedula =@cedula
+		update Usuario set Nombre = @Nombre,Apellido = @Apellido,Apellido2=@Apellido2,Nombre_Usuario=@Nombre_Usuario,Clave=CONVERT(varbinary(8000),ENCRYPTBYPASSPHRASE('password',@Clave))where Cedula =@cedula
 	end
 
 --------------------------------------------------------------------------------------------------------------------
@@ -81,24 +78,17 @@ begin
 select tipo from Usuario
 end
 --------------------------------------------------------------------------------------------------------------------
-delete Usuario where Codigo_Usuario=16
-select * from Usuario
-------------este update es para cambiar el tipo de minuscula ha mayuscula. debido a que envial estan en mayusculas.
-update Usuario set tipo='CLIENTE ' where tipo='Cliente' 
+
+--este update es para cambiar el tipo de minuscula ha mayuscula. debido a que envial estan en mayusculas.
 ---------------------------------------------------------------------------------------------------------------------------------
-<<<<<<< Updated upstream
 insert into Usuario values(1,'leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','leo10'),'Administrador')
 insert into Usuario values(2,'calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
 insert into Usuario values(4,'keyssi','rivera','de lezcano','33333','key@','key',ENCRYPTBYPASSPHRASE('password','key3'),'Administrador')
-<<<<<<< Updated upstream
-insert into Usuario values('Michael','Arroyo','Valenzuela','989780','michael@','mike',ENCRYPTBYPASSPHRASE('password','m88'),'Cliente')
-=======
 
-=======
+insert into Usuario values('Michael','Arroyo','Valenzuela','989780','michael@','mike',ENCRYPTBYPASSPHRASE('password','m88'),'Cliente')
+
 insert into Usuario values('leonardo','rodriguez','salazar','1787822','leo24@selcamome','tomepichi',ENCRYPTBYPASSPHRASE('password','le0'),'Administrador')
 insert into Usuario values('calor','lezcano','montoya','111111','carlos@','lezcano00',ENCRYPTBYPASSPHRASE('password','cl10'),'Cliente')
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 -------------------------------------------------------------------------------------------------------------------
 
 select a.Usuario, a.Fecha, b.Codigo_Articulo as CodigoArticulo, b.Precio_Articulo as PrecioArticulo, 

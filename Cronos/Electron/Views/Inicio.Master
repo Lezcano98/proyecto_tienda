@@ -76,6 +76,7 @@
             <a class="collapse-item" href="Agregar_Departamentos.aspx">DEPARTAMENTOS</a>
             <a class="collapse-item" href="Agregar_Articulos.aspx">ARTICULO</a>
               <a class="collapse-item" href="Bitacora.aspx">BITACORA</a>
+              <a class="collapse-item" href="Factura.aspx">FACTURAS</a>
          
           </div>
         </div>
@@ -188,7 +189,7 @@
               </a>
               <!-- Dropdown PARA MOSTRAR LA INFORMACION -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="Perfil.aspx">
                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                  MI PERFIL
                 </a>

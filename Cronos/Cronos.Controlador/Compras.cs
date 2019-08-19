@@ -16,6 +16,8 @@ namespace Cronos.Controlador
         public string descripcion;
         public string precio;
         public int cantidad;
+        //esta variable es exclusiva para la busqueda con el dropdown list
+        public int dpselecion;
         /// atributos pra el ingreso de la factura 
         public int codigo_Articulo;
         public double descuento;
@@ -24,7 +26,7 @@ namespace Cronos.Controlador
         public string usuario;
         public double total_pagar;
 
-        public Compras(int opc, DateTime fecha_compra, string departamento, string articulo, string descripcion, string precio, int cantidad, int codigo_Articulo, double descuento, double subtotal, double iVA, string usuario, double total_pagar)
+        public Compras(int opc, DateTime fecha_compra, string departamento, string articulo, string descripcion, string precio, int cantidad, int codigo_Articulo, double descuento, double subtotal, double iVA, string usuario, double total_pagar, int dpselecion)
         {
             this.opc = opc;
             this.fecha_compra = fecha_compra;
@@ -38,7 +40,8 @@ namespace Cronos.Controlador
             this.subtotal = subtotal;
             this.iVA = iVA;
             this.usuario = usuario;
-            this.total_pagar=total_pagar;
+            this.total_pagar = total_pagar;
+            this.dpselecion = dpselecion;
         }
         public Compras()
         {
@@ -55,6 +58,7 @@ namespace Cronos.Controlador
             this.iVA = 0.0;
             this.usuario = "";
             this.total_pagar = 0.0;
+            this.dpselecion = 0;
         }
 
         public int Opc { get => opc; set => opc = value; }
@@ -70,5 +74,6 @@ namespace Cronos.Controlador
         public double IVA { get => iVA; set => iVA = value; }
         public string Usuario { get => usuario; set => usuario = value; }
         public double Total_pagar { get => total_pagar; set => total_pagar = value; }
+        public int Dpselecion { get => dpselecion; set => dpselecion = value; }
     }
 }

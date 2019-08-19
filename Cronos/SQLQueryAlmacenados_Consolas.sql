@@ -42,6 +42,7 @@ alter procedure Articulos
 	insert into Departamentos values('Video Jugeo',1)
 ----codigo para reiniciar un campo identity en una tabla.
 DBCC CHECKIDENT (Pago_Factura, RESEED,0)
+
 create procedure SPBusqueda
 @opcion int,
 @nombre_deArticulo varchar(20)=null
@@ -53,4 +54,4 @@ if @opcion=1
 	end
 end
 
-select * from Usuario
+--select * from Usuario

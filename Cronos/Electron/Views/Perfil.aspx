@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/master2.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="Electron.Views.Perfil" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%-- links pra las alertas --%>
+       <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
+
 </asp:Content>
 
 
@@ -62,7 +67,7 @@
                  function mensajeError() {
                      swal.fire({
                          title: '¡Error!',
-                         text: "¡" + " El nombre de usuario y el numero de cedula no deben ser DUPLICADOS" + "!",
+                         text: "¡" + " El Este nombre de Usuario ya se se encuantra Registrado" + "!",
                          type: 'error',
                          showConfirmButton: false,
                          allowOutsideClick: false,
@@ -75,7 +80,7 @@
         function mensajeDeconfirmacion() {
             swal.fire({
                 title: "¡EXITO!",
-                text: "¡"+"El usuario se guardo con EXITO"+"!",
+                text: "¡"+"Sus Datos se Actuarlizaron con exito con EXITO"+"!",
                 type: 'success',
                 allowOutsideClick: false,
             })

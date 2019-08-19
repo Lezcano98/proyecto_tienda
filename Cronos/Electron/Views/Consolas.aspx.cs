@@ -13,6 +13,7 @@ namespace Electron.Views
 
         private Compras cp;
         private ComprasHelper cph;
+        private Correos cr;
 
         // variables estaticas que me acumlan los valores del gridviews
         public static string nombreA;
@@ -22,7 +23,11 @@ namespace Electron.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string valid = Usuarios.TipoUsu;
+            if (valid == null)
+            {
+                Response.Redirect("LOGING.aspx");
+            }
         }
 
         protected void btn_comprasCosolas_Click(object sender, EventArgs e)
@@ -69,6 +74,13 @@ namespace Electron.Views
             precio = this.GridConsolas.Rows[GridConsolas.SelectedIndex].Cells[3].Text;
             nombreA = this.GridConsolas.Rows[GridConsolas.SelectedIndex].Cells[4].Text;
             codigo = int.Parse(this.GridConsolas.Rows[GridConsolas.SelectedIndex].Cells[5].Text);
+
+        }
+
+        public void EnviarCorreo()
+        {
+            this.cr = new Correos();
+            this.cr.Enviar_Correo(Usuarios.CorreoCompra, "Factura de Tienda Cronos", "");
 
         }
     }

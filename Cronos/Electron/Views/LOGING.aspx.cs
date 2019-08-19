@@ -41,18 +41,20 @@ namespace Electron
 
                     Usuarios.setTipo(fila["tipo"].ToString());
 
-                    if (fila["tipo"].ToString()== "ADMINISTRADOR ")
+                    if (fila["tipo"].ToString()=="ADMINISTRADOR ")
                     {
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
+                        Usuarios.setCedula(fila["Cedula"].ToString());
+                        Usuarios.setCorreo(fila["Correo"].ToString());
                         Response.Redirect("principal.aspx");
 
                     }
                     else if (fila["tipo"].ToString()=="CLIENTE")
                     {
-                       
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
+                        Usuarios.setCedula(fila["Cedula"].ToString());
+                        Usuarios.setCorreo(fila["Correo"].ToString());
                         Response.Redirect("Principal2.aspx");
-                      
                     }
 
                 }

@@ -132,7 +132,7 @@ namespace Cronos.Controlador
                 parParameter[5] = new SqlParameter();
                 parParameter[5].ParameterName = "@Correo";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
-                parParameter[5].Size = 20;
+                parParameter[5].Size = 50;
                 parParameter[5].SqlValue = objusuarios.Correo;
 
                 parParameter[6] = new SqlParameter();
@@ -169,7 +169,7 @@ namespace Cronos.Controlador
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[9];
+                SqlParameter[] parParameter = new SqlParameter[7];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
@@ -200,29 +200,29 @@ namespace Cronos.Controlador
                 parParameter[4].Size = 9;
                 parParameter[4].SqlValue = objusuarios.Cedula;
 
+                //parParameter[5] = new SqlParameter();
+                //parParameter[5].ParameterName = "@Correo";
+                //parParameter[5].SqlDbType = SqlDbType.VarChar;
+                //parParameter[5].Size = 20;
+                //parParameter[5].SqlValue = objusuarios.Correo;
+
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@Correo";
+                parParameter[5].ParameterName = "@Nombre_Usuario";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
                 parParameter[5].Size = 20;
-                parParameter[5].SqlValue = objusuarios.Correo;
+                parParameter[5].SqlValue = objusuarios.Nombre_usuario;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@Nombre_Usuario";
+                parParameter[6].ParameterName = "@Clave";
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 20;
-                parParameter[6].SqlValue = objusuarios.Nombre_usuario;
+                parParameter[6].Size = 50;
+                parParameter[6].SqlValue = objusuarios.Clave;
 
-                parParameter[7] = new SqlParameter();
-                parParameter[7].ParameterName = "@Clave";
-                parParameter[7].SqlDbType = SqlDbType.VarChar;
-                parParameter[7].Size = 50;
-                parParameter[7].SqlValue = objusuarios.Clave;
-
-                parParameter[8] = new SqlParameter();
-                parParameter[8].ParameterName = "@tipo";
-                parParameter[8].SqlDbType = SqlDbType.VarChar;
-                parParameter[8].Size = 20;
-                parParameter[8].SqlValue = objusuarios.Tipo;
+                //parParameter[8] = new SqlParameter();
+                //parParameter[8].ParameterName = "@tipo";
+                //parParameter[8].SqlDbType = SqlDbType.VarChar;
+                //parParameter[8].Size = 20;
+                //parParameter[8].SqlValue = objusuarios.Tipo;
 
 
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
