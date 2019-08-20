@@ -54,8 +54,8 @@
                   <%-- dropdow para rol de suuario --%>
                         <div class="bg-white py-2 collapse-inner rounded"> Selecione Tipo de Usuario&nbsp;
                             <asp:DropDownList ID="DropDownList1" runat="server">
-                                <asp:ListItem>ADMINISTRADOR </asp:ListItem>
-                                <asp:ListItem>CLIENTE</asp:ListItem>
+                                <asp:ListItem Value="administrador">Administrador</asp:ListItem>
+                                <asp:ListItem Value="cliente">Cliente</asp:ListItem>
                             </asp:DropDownList>
                                 </div>
                  

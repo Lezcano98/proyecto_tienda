@@ -52,7 +52,7 @@ namespace Electron.Views
                 this.cp.Descuento = double.Parse(precio)* 0.5;
                 this.cp.Subtotal = double.Parse(precio) - this.cp.Descuento;
                 this.cp.IVA = iva;
-                //this.cp.Usuario = Usuarios.NonbreyApellido;
+                this.cp.Usuario = Usuarios.Usuario;
                 this.cp.Total_pagar = double.Parse(this.txtcantidad.Text)*this.cp.Subtotal;
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);

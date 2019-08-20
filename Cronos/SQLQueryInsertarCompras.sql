@@ -9,7 +9,8 @@ alter procedure SPInsertar_Compras
     @subtotal decimal(12,0)=null,
 	@IVA decimal(12,0)=null,
 	@total_pagar decimal(18,0)=null,
-	@Fecha datetime = null
+	@Fecha datetime = null,
+	@Nombre_Usuario varchar(20)=null
 --@Articulo_Comprado varchar(20)= null,
 -- esta parate es para el insert en la factura.
 --@codigo_informacion int=null,	
@@ -20,7 +21,7 @@ alter procedure SPInsertar_Compras
 	declare @usu int
 	if @opcion = 1
 	begin
-	select  @usu=Codigo_Usuario from Usuario
+	select  @usu=Codigo_Usuario from Usuario where Nombre_Usuario=@Nombre_usuario
 		--insert into Compras values(@Fecha_Compra,@Departamento, @Articulo_Comprado, @Descripcion_Articulo,convert(money,@Precio),@Cantidad,@Codigo_Articulo)	
 		insert into Informacion_Factura values(@usu,@Fecha)
 		insert into Pago_Factura values(@Codigo_Articulo, @Departamento, @Descripcion_Articulo, convert(money,@Precio_Articulo),@Cantidad,@Descuento,@subtotal,@IVA,@total_pagar)

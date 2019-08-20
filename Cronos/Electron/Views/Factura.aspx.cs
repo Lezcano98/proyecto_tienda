@@ -18,7 +18,7 @@ namespace Electron.Views
         {
             string valid = Usuarios.TipoUsu;
 
-            if (valid == null || valid == "CLIENTE" || valid != "ADMINISTRADOR ")
+            if (valid == null || valid == "cliente")
             {
                 Response.Redirect("LOGING.aspx");
             }
@@ -41,10 +41,10 @@ namespace Electron.Views
                 GridView1.DataBind();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+               
             }
         }
     }

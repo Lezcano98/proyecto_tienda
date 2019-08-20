@@ -74,6 +74,7 @@
     <Content Include="Views\Consolas.aspx" />
     <Content Include="Views\Factura.aspx" />
     <Content Include="Views\img\WhatsApp Image 2019-08-16 at 8.21.05 PM.jpeg" />
+    <Content Include="Views\inicioP.aspx" />
     <Content Include="Views\Perfil.aspx" />
     <Content Include="Views\VideoJuegos.aspx" />
     <Content Include="Views\css\sb-admin-2.css" />
@@ -90,7 +91,6 @@
     <Content Include="Views\js\demo\datatables-demo.js" />
     <Content Include="Views\js\sb-admin-2.js" />
     <Content Include="Views\js\sb-admin-2.min.js" />
-    <Content Include="Views\principal.aspx" />
     <Content Include="Views\Principal2.aspx" />
     <Content Include="Views\Registrar_Usu.aspx" />
     <Content Include="Views\sweetalert\sweetalert2.all.js" />
@@ -1730,6 +1730,13 @@
     <Compile Include="Views\Factura.aspx.designer.cs">
       <DependentUpon>Factura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\inicioP.aspx.cs">
+      <DependentUpon>inicioP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\inicioP.aspx.designer.cs">
+      <DependentUpon>inicioP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1757,13 +1764,6 @@
     </Compile>
     <Compile Include="Views\master2.Master.designer.cs">
       <DependentUpon>master2.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Views\principal.aspx.cs">
-      <DependentUpon>principal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\principal.aspx.designer.cs">
-      <DependentUpon>principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\LOGING.aspx.cs">

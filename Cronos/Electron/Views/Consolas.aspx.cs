@@ -39,7 +39,7 @@ namespace Electron.Views
                 this.cp = new Compras();
                 this.cp.fecha_compra = DateTime.Today;
                 this.cp.Departamento = "Consolas";
-                this.cp.Articulo = nombreA;
+                //this.cp.Articulo = nombreA;
                 this.cp.Descripcion = Descripcion;
                 this.cp.Precio = precio;
                 this.cp.Cantidad = int.Parse(this.txtcantidad.Text);
@@ -47,14 +47,12 @@ namespace Electron.Views
                 this.cp.Descuento = double.Parse(precio) * 0.1;
                 this.cp.Subtotal = double.Parse(precio) - this.cp.Descuento;
                 this.cp.IVA = iva;
-                this.cp.Usuario = Usuarios.NonbreyApellido;
+                this.cp.Usuario = Usuarios.Usuario;
                 this.cp.Total_pagar = double.Parse(this.txtcantidad.Text) * this.cp.Subtotal;
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
-                Response.Redirect("Factura.aspx");
-
-
+            
                 this.lbl_estado.Text = "compra exitosa";
 
             }

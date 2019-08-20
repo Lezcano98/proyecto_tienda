@@ -21,7 +21,7 @@ namespace Electron
 
             string valid = Usuarios.TipoUsu;
 
-            if (valid == null || valid == "CLIENTE" || valid != "ADMINISTRADOR ")
+            if (valid == null || valid == "cliente")
             {
                 Response.Redirect("LOGING.aspx");
             }

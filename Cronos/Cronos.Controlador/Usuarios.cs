@@ -26,6 +26,7 @@ namespace Cronos.Controlador
         public static string tipoUsu;
         public static string cedulaActualizar;
         public static string correoCompra;
+        public static string usuario;
         public int Opc { get => opc; set => opc = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
@@ -39,6 +40,7 @@ namespace Cronos.Controlador
         public static string TipoUsu { get => tipoUsu; set => tipoUsu = value; }
         public static string CedulaActualizar { get => cedulaActualizar; set => cedulaActualizar = value; }
         public static string CorreoCompra { get => correoCompra; set => correoCompra = value; }
+        public static string Usuario { get => usuario; set => usuario = value; }
 
         public Usuarios(int opc, string nombre, string apellido, string apellido2, string cedula, string correo, string nombre_usuario, string clave, string tipo)
         {
@@ -79,6 +81,12 @@ namespace Cronos.Controlador
           }
         public static void setCorreo(string correos) {
             CorreoCompra = correos;
+        }
+
+        public static void setusuario(string usuario)
+        {
+            Usuario = usuario;
+
         }
 
 

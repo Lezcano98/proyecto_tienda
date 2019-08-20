@@ -41,28 +41,30 @@ namespace Electron
 
                     Usuarios.setTipo(fila["tipo"].ToString());
 
-                    if (fila["tipo"].ToString()=="ADMINISTRADOR ")
+                    if (fila["tipo"].ToString()=="administrador")
                     {
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                         Usuarios.setCedula(fila["Cedula"].ToString());
                         Usuarios.setCorreo(fila["Correo"].ToString());
-                        Response.Redirect("principal.aspx");
+                        Usuarios.setusuario(fila["Nombre_Usuario"].ToString());
+                        Response.Redirect("inicioP.aspx");
 
                     }
-                    else if (fila["tipo"].ToString()=="CLIENTE")
+                    else if (fila["tipo"].ToString()=="cliente")
                     {
                         Usuarios.Setnombre(fila["Nombre"].ToString() + " " + fila["Apellido"].ToString());
                         Usuarios.setCedula(fila["Cedula"].ToString());
                         Usuarios.setCorreo(fila["Correo"].ToString());
+                        Usuarios.setusuario(fila["Nombre_Usuario"].ToString());
                         Response.Redirect("Principal2.aspx");
                     }
 
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-              
+                this.txtnombreusuario.Text = ex.Message;
                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" +""+ "');", true);
             }
         }

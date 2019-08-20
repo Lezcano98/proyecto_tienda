@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Cronos.Controlador;
 
 namespace Electron.Views
 {
@@ -11,7 +12,12 @@ namespace Electron.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string valid = Usuarios.TipoUsu;
 
+            if (valid == null || valid == "cliente")
+            {
+                Response.Redirect("LOGING.aspx");
+            }
         }
     }
 }
