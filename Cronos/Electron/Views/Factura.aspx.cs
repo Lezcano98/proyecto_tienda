@@ -29,22 +29,27 @@ namespace Electron.Views
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+        }
+
+        protected void btnbuscar_factura_Click(object sender, EventArgs e)
+        {
             try
             {
+                this.datos = new DataTable();
                 this.cp = new Compras();
                 this.cp.Dpselecion = int.Parse(this.DropDownList1.SelectedValue);
                 this.cp.Opc = 1;
                 this.cpH = new ComprasHelper(cp);
-                this.datos = new DataTable();
                 datos = (DataTable)GridView1.DataSource;
                 this.GridView1.DataSource = this.cpH.BuscarFactura();
                 GridView1.DataBind();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-               
+                lblmensaje.Text = ex.Message;
             }
         }
     }
