@@ -14,12 +14,15 @@ namespace Electron.Views
         private Compras cp;
         private ComprasHelper cph;
         private Correos cr;
+        private DataTable datos;
 
         // variables estaticas que me acumlan los valores del gridviews
         public static string nombreA;
         public static string Descripcion;
         public static string precio;
         public static int codigo;
+        // para capturar el numero d efactura
+        public static int factura;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +35,7 @@ namespace Electron.Views
 
         protected void btn_comprasCosolas_Click(object sender, EventArgs e)
         {
-
+            listarcompras();
             double iva = 13;
             try
             {
@@ -52,6 +55,7 @@ namespace Electron.Views
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
+                EnviarCorreo();
             
                 this.lbl_estado.Text = "compra exitosa";
 
@@ -74,12 +78,39 @@ namespace Electron.Views
             codigo = int.Parse(this.GridConsolas.Rows[GridConsolas.SelectedIndex].Cells[5].Text);
 
         }
+        private void listarcompras()
+        {
 
+            try
+            {
+                this.cp = new Compras();
+                this.cp.Opc = 1;
+                this.cph = new ComprasHelper(cp);
+                this.datos = new DataTable();
+                this.datos = this.cph.CargarCompras();
+
+                if (datos.Rows.Count >= 0)
+                {
+
+                    DataRow fila = datos.Rows[0];
+                    factura = int.Parse(fila["Numero_Factura"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
         public void EnviarCorreo()
         {
             this.cr = new Correos();
-            this.cr.Enviar_Correo(Usuarios.CorreoCompra, "Factura de Tienda Cronos", "");
+            this.cr.Enviar_Correo(Usuarios.CorreoCompra, "Factura de Tienda Cronos", "Numero de factura '" + factura + "'Fecha de compra: '" + DateTime.Now + "'descripcion:Consola, Precio'" + precio + "' '" + "" + "'" +
+                "cantidad:  '" + this.cp.Cantidad + "',Impuesto:13% ya Agregado Descueno:" + this.cp.Descuento + "' Usuario que efectuo la compra:'" + Usuarios.Usuario + "' Total a Pagar: '" + this.cp.Total_pagar + "'");
 
         }
+
     }
 }

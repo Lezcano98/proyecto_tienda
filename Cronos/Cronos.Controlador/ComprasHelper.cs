@@ -129,9 +129,10 @@ namespace Cronos.Controlador
                 parParameter[0].SqlValue = objcompras.Opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@Codigo_usuario";
-                parParameter[1].SqlDbType = SqlDbType.Int;
-                parParameter[1].SqlValue = objcompras.Dpselecion;
+                parParameter[1].ParameterName = "@codigo_usuario";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size=50;
+                parParameter[1].SqlValue = objcompras.buscarfactura;
 
                 //para  mi proceso almacenado factura
                 tblDatos = cnGeneral.RetornaTabla(parParameter,"SPBusquedaFactura");

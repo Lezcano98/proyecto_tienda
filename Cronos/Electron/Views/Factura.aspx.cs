@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Cronos.Controlador;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Electron.Views
 {
@@ -22,25 +23,29 @@ namespace Electron.Views
             {
                 Response.Redirect("LOGING.aspx");
             }
+           
         }
-        protected void btnbuscar_factura_Click(object sender, EventArgs e)
+
+        protected void Bbusqueda_Click(object sender, EventArgs e)
         {
             try
             {
-                this.datos = new DataTable();
+                //SqlDatausuarios.Select();
+                //this.datos = new DataTable();
                 this.cp = new Compras();
-                this.cp.Dpselecion = int.Parse(this.DropDownList1.SelectedValue);
+                this.cp.buscarfactura = int.Parse(DropDownList1.SelectedValue);
                 this.cp.Opc = 1;
                 this.cpH = new ComprasHelper(cp);
-                datos = (DataTable)GridView1.DataSource;
-                this.GridView1.DataSource = this.cpH.BuscarFactura();
+                ////GridView1.DataSource = datos;
+                //GridView1.DataSource=this.cpH.BuscarFactura();
                 GridView1.DataBind();
+                //this.GridView1.DataSource = this.cpH.BuscarFactura();
 
             }
             catch (Exception ex)
             {
+                this.lblmensaje.Text = ex.Message;
 
-                lblmensaje.Text = ex.Message;
             }
         }
     }
