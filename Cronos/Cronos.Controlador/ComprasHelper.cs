@@ -133,7 +133,7 @@ namespace Cronos.Controlador
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objcompras.Dpselecion;
 
-                //para  mi proceso almacenado cliente
+                //para  mi proceso almacenado factura
                 tblDatos = cnGeneral.RetornaTabla(parParameter,"SPBusquedaFactura");
             }
             catch (Exception ex)
@@ -144,5 +144,33 @@ namespace Cronos.Controlador
             return tblDatos;
         }
 
+        public DataTable CargarCompras()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[1];
+
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objcompras.Opc;
+
+
+                //para  mi proceso almacenado contrato
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPNFACTURA");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
     }
 }

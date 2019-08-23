@@ -19,6 +19,7 @@ namespace Electron.Views
         private DataTable datos;
         private Correos cr;
 
+        public static int factura;
         // variables estaticas que me acumlan los valores del gridviews
         //public static string nombreA;
         public static string Descripcion;
@@ -31,16 +32,18 @@ namespace Electron.Views
             {
                 Response.Redirect("LOGING.aspx");
             }
+           
         }
 
         protected void btningresar_Click(object sender, EventArgs e)
         {
             //double descuento = int.Parse(precio) * 0.5;
             //double subtotal =int.Parse(precio)-descuento;
-            
+            listarcompras();
             double iva = 13;
             try
             {
+              
                 this.cp = new Compras();
                 this.cp.fecha_compra = DateTime.Now;
                 this.cp.Departamento = "Video Juegos";
@@ -57,6 +60,7 @@ namespace Electron.Views
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
+                 EnviarCorreo();
 
                 this.lbl_estado.Text = "compra exitosa";
                 //Response.Redirect("Factura.aspx");
@@ -77,6 +81,31 @@ namespace Electron.Views
             codigo = int.Parse(this.GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text);
         }
 
+        private void listarcompras() {
+
+            try
+            {
+                this.cp = new Compras();
+                this.cp.Opc = 1;
+                this.cph = new ComprasHelper(cp);
+                this.datos = new DataTable();
+                this.datos = this.cph.CargarCompras();
+
+                if (datos.Rows.Count >= 0)
+                {
+                   
+                    DataRow fila = datos.Rows[0];
+                    factura = int.Parse(fila["Numero_Factura"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
         protected void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             //try
@@ -102,7 +131,8 @@ namespace Electron.Views
         public void EnviarCorreo()
         {
             this.cr = new Correos();
-            this.cr.Enviar_Correo(Usuarios.CorreoCompra,"Factura de Tienda Cronos","");
+            this.cr.Enviar_Correo(Usuarios.CorreoCompra,"Factura de Tienda Cronos","Numero de factura '"+factura+"'Fecha de compra: '"+DateTime.Now+"'descripcion:video Juego, Precio'"+precio+"' '"+""+"'" +
+                "cantidad:  '"+this.cp.Cantidad+"',Impuesto:13% ya Agregado Descueno:"+ this.cp.Descuento+"' Usuario que efectuo la compra:'"+Usuarios.Usuario+"' Total a Pagar: '"+this.cp.Total_pagar+"'");
 
         }
     }

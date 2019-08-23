@@ -18,8 +18,8 @@ namespace Cronos.Controlador
 
                 msg.To.Add(destino);
                 msg.Bcc.Add(destino); //Copia Oculto, en caso que se requiera
-                msg.From = new MailAddress("lezki90.loco@gmail.com", "Registro En La Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
-                msg.Subject = Asunto = "Registro En La Tienda Cronos";
+                msg.From = new MailAddress("lezki90.loco@gmail.com", "Tienda Cronos", System.Text.Encoding.UTF8);//Verificar el formato
+                msg.Subject = Asunto;
                 msg.SubjectEncoding = System.Text.Encoding.UTF8;
                 msg.Body = Cuerpo;
                 msg.BodyEncoding = System.Text.Encoding.Unicode;

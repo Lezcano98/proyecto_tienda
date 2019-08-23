@@ -19,16 +19,28 @@ alter procedure SPInsertar_Compras
 
 	as
 	declare @usu int
+	declare @Nfactura int
 	if @opcion = 1
 	begin
 	select  @usu=Codigo_Usuario from Usuario where Nombre_Usuario=@Nombre_usuario
-		--insert into Compras values(@Fecha_Compra,@Departamento, @Articulo_Comprado, @Descripcion_Articulo,convert(money,@Precio),@Cantidad,@Codigo_Articulo)	
-		insert into Informacion_Factura values(@usu,@Fecha)
-		insert into Pago_Factura values(@Codigo_Articulo, @Departamento, @Descripcion_Articulo, convert(money,@Precio_Articulo),@Cantidad,@Descuento,@subtotal,@IVA,@total_pagar)
-		
-	
+    insert into Informacion_Factura values(@usu,@Fecha)
+    insert into Pago_Factura values(@Codigo_Articulo, @Departamento, @Descripcion_Articulo, convert(money,@Precio_Articulo),@Cantidad,@Descuento,@subtotal,@IVA,@total_pagar)
+
+
 	end
-	
+	if @opcion=2
+	begin
+        select ISNULL(max(Numero_Factura),0)+1 from Informacion_Factura
+	end
+---   SELECT @IdProvinciaInsertada= SCOPE_IDENTITY()
+
+   -- select @@IDENTITY Numero_Factura from Informacion_Factura
+	--select  @Nfactura=@@IDENTITY from Informacion_Factura
+	--select @@IDENTITY =@Nfactura from Informacion_Fcatura
+-----------------------------------------
+-- este para extraer el campo identity
+--select Numero_Factura from Informacion_Factura where Numero_Factura=@@IDENTITY
+ --Select Numero_Factura from Informacion_Factura where(Numero_Factura= SCOPE_IDENTITY())
 	select * from Articulo
 	select * from Usuario
 	select * from Departamentos
@@ -38,8 +50,9 @@ alter procedure SPInsertar_Compras
 	select * from Informacion_Factura
 
 
-	delete Usuario where Tipo='CLIENTE'
-	DBCC CHECKIDENT (Pago_Factura, RESEED,0)
+	delete Informacion_Factura where Usuario=2
+	delete Pago_Factura where IVA=13
+	DBCC CHECKIDENT (Informacion_Factura, RESEED,0)
 
 -------------------------------------------------
 --	select * from Articulo

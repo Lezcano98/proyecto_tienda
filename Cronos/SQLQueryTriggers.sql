@@ -1,27 +1,15 @@
-create table Bitacora
-(
-consecutivo_Entrada int not null,
-Descripcion_Articulo varchar(50) not null,
-Precio_Articulo money not null,
-nombre_deArticulo varchar not null,
-Id_Departamento int not null,
-Fecha_Transaccion datetime not null,
-Tipo_Transaccion varchar(25) not null,
-tabla varchar(50) not null
-)
-
 
 --TRIGGER DE INSERTAR
-CREATE TRIGGER ARTICULOS_INGRESADOS
+alter TRIGGER ARTICULOS_INGRESADOS
 ON Articulo
 AFTER INSERT
 
 AS
 
 DECLARE @Codigo_Articulo INT
-DECLARE @Descripcion_Articulo VARCHAR
+DECLARE @Descripcion_Articulo VARCHAR(max)
 DECLARE @Precio_articulo MONEY
-DECLARE @nombre_deArticulo VARCHAR
+DECLARE @nombre_deArticulo VARCHAR(max)
 DECLARE @Departamento INT
 
 	BEGIN
@@ -35,16 +23,16 @@ DECLARE @Departamento INT
 
 --CREACION DE TRIGGER BORRAR
 
-CREATE TRIGGER ARTICULOS_BORRADOS
+alter TRIGGER ARTICULOS_BORRADOS
 ON Articulo
 AFTER DELETE
 
 AS
 
 DECLARE @Codigo_Articulo INT
-DECLARE @Descripcion_Articulo VARCHAR
+DECLARE @Descripcion_Articulo VARCHAR(max)
 DECLARE @Precio_articulo MONEY
-DECLARE @nombre_deArticulo VARCHAR
+DECLARE @nombre_deArticulo VARCHAR(max)
 DECLARE @Departamento INT
 
 	BEGIN

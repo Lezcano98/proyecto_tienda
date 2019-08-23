@@ -23,15 +23,6 @@ namespace Electron.Views
                 Response.Redirect("LOGING.aspx");
             }
         }
-
-
-
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-        }
-
         protected void btnbuscar_factura_Click(object sender, EventArgs e)
         {
             try
