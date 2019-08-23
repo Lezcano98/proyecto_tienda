@@ -16,7 +16,6 @@ alter procedure SPInsertar_Compras
 --@codigo_informacion int=null,	
 ---insertar en la informacion de la factura
 --@Usuario varchar(50) =null
-
 	as
 	declare @usu int
 	declare @Nfactura int
@@ -25,13 +24,16 @@ alter procedure SPInsertar_Compras
 	select  @usu=Codigo_Usuario from Usuario where Nombre_Usuario=@Nombre_usuario
     insert into Informacion_Factura values(@usu,@Fecha)
     insert into Pago_Factura values(@Codigo_Articulo, @Departamento, @Descripcion_Articulo, convert(money,@Precio_Articulo),@Cantidad,@Descuento,@subtotal,@IVA,@total_pagar)
-
-
 	end
-	if @opcion=2
+-----------------------------
+alter procedure SPNFACTURA
+	@opcion int
+	as
+	if @opcion=1
 	begin
-        select ISNULL(max(Numero_Factura),0)+1 from Informacion_Factura
+        select Numero_Factura=ISNULL(max(Numero_Factura),0)+1 from Informacion_Factura
 	end
+
 ---   SELECT @IdProvinciaInsertada= SCOPE_IDENTITY()
 
    -- select @@IDENTITY Numero_Factura from Informacion_Factura

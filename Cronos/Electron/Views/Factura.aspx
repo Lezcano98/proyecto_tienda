@@ -31,9 +31,9 @@
 where c.Numero_Factura=d.Factura
 and a.Codigo_Articulo=d.Codigo_Articulo
 and e.Codigo_Usuario=c.Usuario"></asp:SqlDataSource>
-                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDatacliente" DataTextField="Nombre_Usuario" DataValueField="Codigo_Usuario" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDatacliente" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="SELECT [Nombre_Usuario], [Codigo_Usuario] FROM [Usuario]"></asp:SqlDataSource>
+                
+                <br />
+                <br />
                 <asp:Button ID="btnbuscar_factura" runat="server" OnClick="btnbuscar_factura_Click" Text="BUSCAR" />
                 <br />
                 <asp:Label ID="lblmensaje" runat="server"></asp:Label>
