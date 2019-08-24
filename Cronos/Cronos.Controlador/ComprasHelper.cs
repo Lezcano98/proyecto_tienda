@@ -129,7 +129,7 @@ namespace Cronos.Controlador
                 parParameter[0].SqlValue = objcompras.Opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@codigo_usuario";
+                parParameter[1].ParameterName = "@nombre_usu";
                 parParameter[1].SqlDbType = SqlDbType.VarChar;
                 parParameter[1].Size=50;
                 parParameter[1].SqlValue = objcompras.buscarfactura;
@@ -173,5 +173,34 @@ namespace Cronos.Controlador
 
             return tblDatos;
         }
+        public DataTable Cargar_Factura()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[1];
+
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objcompras.Opc;
+
+
+                //para  mi proceso almacenado contrato
+                tblDatos = cnGeneral.RetornaTabla(parParameter,"SPlistar_Factura");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
     }
 }

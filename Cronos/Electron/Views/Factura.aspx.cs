@@ -23,23 +23,23 @@ namespace Electron.Views
             {
                 Response.Redirect("LOGING.aspx");
             }
-           
+         
         }
 
         protected void Bbusqueda_Click(object sender, EventArgs e)
         {
+          
             try
             {
-                //SqlDatausuarios.Select();
-                //this.datos = new DataTable();
+                datos = (DataTable)Gridfactura.DataSource;
                 this.cp = new Compras();
-                this.cp.buscarfactura = int.Parse(DropDownList1.SelectedValue);
+                this.cp.buscarfactura = this.txtbuscar.Text;
                 this.cp.Opc = 1;
                 this.cpH = new ComprasHelper(cp);
-                ////GridView1.DataSource = datos;
-                //GridView1.DataSource=this.cpH.BuscarFactura();
-                GridView1.DataBind();
-                //this.GridView1.DataSource = this.cpH.BuscarFactura();
+                this.datos = new DataTable();
+                Gridfactura.DataSource = this.cpH.BuscarFactura();
+                Gridfactura.DataBind();
+       
 
             }
             catch (Exception ex)
@@ -47,6 +47,38 @@ namespace Electron.Views
                 this.lblmensaje.Text = ex.Message;
 
             }
+        }
+
+        private void listar()
+        {
+            try
+            {
+                this.cp = new Compras();
+                this.cp.opc = 1;
+
+                this.cpH = new ComprasHelper(cp);
+                this.datos = new DataTable();
+
+                this.datos = this.cpH.Cargar_Factura();
+
+                if (datos.Rows.Count >= 0)
+                {
+                    this.Gridfactura.DataSource = datos;
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                this.lblmensaje.Text = ex.Message;
+            }
+        }
+
+        protected void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            listar();
         }
     }
 }
