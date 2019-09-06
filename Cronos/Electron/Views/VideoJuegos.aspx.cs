@@ -25,6 +25,7 @@ namespace Electron.Views
         public static string Descripcion;
         public static string precio;
         public static int codigo;
+        public static byte[] imagen;
         protected void Page_Load(object sender, EventArgs e)
         {
             string valid = Usuarios.TipoUsu;
@@ -32,7 +33,7 @@ namespace Electron.Views
             {
                 Response.Redirect("LOGING.aspx");
             }
-           
+
         }
 
         protected void btningresar_Click(object sender, EventArgs e)
@@ -43,24 +44,24 @@ namespace Electron.Views
             double iva = 13;
             try
             {
-              
+
                 this.cp = new Compras();
                 this.cp.fecha_compra = DateTime.Now;
                 this.cp.Departamento = "Video Juegos";
                 //this.cp.Articulo =nombreA;
                 this.cp.Descripcion = Descripcion;
-                this.cp.Precio =precio;
+                this.cp.Precio = precio;
                 this.cp.Cantidad = int.Parse(this.txtcantidad.Text);
-                this.cp.Codigo_Articulo =codigo;
-                this.cp.Descuento = double.Parse(precio)* 0.5;
+                this.cp.Codigo_Articulo = codigo;
+                this.cp.Descuento = double.Parse(precio) * 0.5;
                 this.cp.Subtotal = double.Parse(precio) - this.cp.Descuento;
                 this.cp.IVA = iva;
                 this.cp.Usuario = Usuarios.Usuario;
-                this.cp.Total_pagar = double.Parse(this.txtcantidad.Text)*this.cp.Subtotal;
+                this.cp.Total_pagar = double.Parse(this.txtcantidad.Text) * this.cp.Subtotal;
                 this.cp.Opc = 1;
                 this.cph = new ComprasHelper(cp);
                 this.cph.InsertarCompras();
-                 EnviarCorreo();
+                EnviarCorreo();
 
                 this.lbl_estado.Text = "compra exitosa";
                 //Response.Redirect("Factura.aspx");
@@ -75,10 +76,18 @@ namespace Electron.Views
 
         public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+       
             Descripcion = this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
             precio = this.GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
             //nombreA = this.GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
             codigo = int.Parse(this.GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text);
+
+            this.txtdescripcion.Text = Descripcion;
+          
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "exampleModal '" + txtdescripcion.Text + "' '"+this.Image2+"' ", "$('#exampleModal').modal();", true);
+
+
         }
 
         private void listarcompras() {
@@ -93,7 +102,7 @@ namespace Electron.Views
 
                 if (datos.Rows.Count >= 0)
                 {
-                   
+
                     DataRow fila = datos.Rows[0];
                     factura = int.Parse(fila["Numero_Factura"].ToString());
                 }
@@ -111,7 +120,7 @@ namespace Electron.Views
             //try
             //{
 
-               
+
             //    this.at = new Articulos();
             //    this.at.Nombre_consola = this.txtbuscar.Text;
             //    this.at.opc = 1;
@@ -131,8 +140,16 @@ namespace Electron.Views
         public void EnviarCorreo()
         {
             this.cr = new Correos();
-            this.cr.Enviar_Correo(Usuarios.CorreoCompra,"Factura de Tienda Cronos","Numero de factura '"+factura+"'Fecha de compra: '"+DateTime.Now+"'descripcion:video Juego, Precio'"+precio+"' '"+""+"'" +
-                "cantidad:  '"+this.cp.Cantidad+"',Impuesto:13% ya Agregado Descueno:"+ this.cp.Descuento+"' Usuario que efectuo la compra:'"+Usuarios.Usuario+"' Total a Pagar: '"+this.cp.Total_pagar+"'");
+            this.cr.Enviar_Correo(Usuarios.CorreoCompra, "Factura de Tienda Cronos", "Numero de factura '" + factura + "'Fecha de compra: '" + DateTime.Now + "'descripcion:video Juego, Precio'" + precio + "' '" + "" + "'" +
+                "cantidad:  '" + this.cp.Cantidad + "',Impuesto:13% ya Agregado Descueno:" + this.cp.Descuento + "' Usuario que efectuo la compra:'" + Usuarios.Usuario + "' Total a Pagar: '" + this.cp.Total_pagar + "'");
+
+        }
+
+        protected void btnvermodal_Click(object sender, EventArgs e)
+        {
+
+          
+
 
         }
     }

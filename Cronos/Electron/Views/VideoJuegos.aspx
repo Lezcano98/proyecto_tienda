@@ -28,17 +28,21 @@
             width: 143px;
         }
     </style>
+
+     <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--<table class="auto-style2">
-        <tr>--%>
             <div class="auto-style1">
                              <div class="input-group-append">
                                  <table class="auto-style2">
                                      <tr>
                                          <td class="text-center">
-          <%--    <asp:TextBox ID="txtbuscar" runat="server"  OnTextChanged="txtbuscar_TextChanged" type="text" class="form-control border border-warning" placeholder="Buscar video juego" aria-label="Search" aria-describedby="basic-addon2" AutoPostBack="True" Width="659px"></asp:TextBox>--%>
+                 
+  
                                              <br />
                                              <table class="w-100">
                                                  <tr>
@@ -49,7 +53,7 @@
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:TemplateField HeaderText="Imagen">
                              <ItemTemplate>
-                 <a href="#" data-toggle="modal" data-target="#exampleModal">
+                 <a href="#">
                     <asp:Image ID="Image1" runat="server" Width="300px" Height="300px" ImageUrl='<%#"data:Image/png;base64,"+Convert.ToBase64String ((byte [])Eval("Imagen")) %>' />
                  </a>
             </ItemTemplate>
@@ -58,6 +62,16 @@
                         <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                         <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" />
+
+                          <asp:TemplateField>
+                         <ItemTemplate>
+                           
+                      <asp:Button ID="btnvermodal" runat="server" OnClick="btnvermodal_Click" Text="Ver Articulo" />
+       
+                            
+                       </ItemTemplate>
+                       </asp:TemplateField>
+             
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -86,7 +100,10 @@
                                                      <td>&nbsp;</td>
                                                  </tr>
                                              </table>
-                                             <br />
+                                                                                                                                                                                                                                                
+                                             
+                                                                                                                                                                                                                                                
+                                            <br />
                                          </td>
                                      </tr>
                                  </table>
@@ -106,6 +123,8 @@
   Comprar
 </button>--%>
 <!-- Modal -->
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -117,9 +136,15 @@
       </div>
       <div class="modal-body">
         Ingrese la cantidad: <asp:TextBox ID="txtcantidad" runat="server"></asp:TextBox>
+          Descripcion:<asp:TextBox ID="txtdescripcion" runat="server"></asp:TextBox>
+
       </div>
+         <asp:Image ID="Image2" runat="server" Width="300px" Height="300px" ImageUrl='<%#"data:Image/png;base64,"+Convert.ToBase64String ((byte [])Eval("Imagen")) %>'/>
+
+        <div>
+              </div>
       <div class="modal-footer">
-          <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary"/>
+          <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary" />
        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
           <%--data-dismiss="modal"--%>
         <button type="button" class="btn btn-secondary" >Cancelar</button>
@@ -128,6 +153,5 @@
   </div>
 </div>
 <%-- fin de la ventana modal  --%>
-
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:Content>

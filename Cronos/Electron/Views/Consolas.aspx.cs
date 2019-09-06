@@ -30,6 +30,7 @@ namespace Electron.Views
             if (valid == null)
             {
                 Response.Redirect("LOGING.aspx");
+
             }
         }
 
