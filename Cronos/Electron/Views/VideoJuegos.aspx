@@ -100,9 +100,8 @@
                                                      <td>&nbsp;</td>
                                                  </tr>
                                              </table>
-                                                                                                                                                                                                                                                
-                                             
-                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                             <br />
                                          </td>
                                      </tr>
@@ -135,19 +134,19 @@
         </button>
       </div>
       <div class="modal-body">
-        Ingrese la cantidad: <asp:TextBox ID="txtcantidad" runat="server"></asp:TextBox>
-          Descripcion:<asp:TextBox ID="txtdescripcion" runat="server"></asp:TextBox>
+        Ingrese la cantidad: <asp:TextBox ID="txtcantidad" runat="server"></asp:TextBox><br>
 
-      </div>
-         <asp:Image ID="Image2" runat="server" Width="300px" Height="300px" ImageUrl='<%#"data:Image/png;base64,"+Convert.ToBase64String ((byte [])Eval("Imagen")) %>'/>
+          Descripcion:<asp:TextBox ID="txtdescripcion" runat="server" ReadOnly="True"></asp:TextBox><br>
+          Precio:<asp:TextBox ID="txtprecio" runat="server" ReadOnly="True"></asp:TextBox><br>
+          Codigo:<asp:TextBox ID="txtcodigo" runat="server" ReadOnly="True"></asp:TextBox><br>
+           <asp:Image ID="Image2" runat="server" />
 
-        <div>
               </div>
       <div class="modal-footer">
           <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary" />
        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
           <%--data-dismiss="modal"--%>
-        <button type="button" class="btn btn-secondary" >Cancelar</button>
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>

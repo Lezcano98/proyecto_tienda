@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 //librerias agrgadas
 using Cronos.Controlador;
 using System.Data;
+using System.IO;
 
 namespace Electron.Views
 {
@@ -25,7 +26,7 @@ namespace Electron.Views
         public static string Descripcion;
         public static string precio;
         public static int codigo;
-        public static byte[] imagen;
+        public static string imagen;
         protected void Page_Load(object sender, EventArgs e)
         {
             string valid = Usuarios.TipoUsu;
@@ -76,17 +77,16 @@ namespace Electron.Views
 
         public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
             Descripcion = this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
             precio = this.GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
             //nombreA = this.GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
             codigo = int.Parse(this.GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text);
 
             this.txtdescripcion.Text = Descripcion;
-          
-
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "exampleModal '" + txtdescripcion.Text + "' '"+this.Image2+"' ", "$('#exampleModal').modal();", true);
-
+            this.txtprecio.Text = precio;
+            this.txtcodigo.Text = codigo.ToString();
+        
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "exampleModal", "$('#exampleModal').modal();", true);
 
         }
 
@@ -147,9 +147,6 @@ namespace Electron.Views
 
         protected void btnvermodal_Click(object sender, EventArgs e)
         {
-
-          
-
 
         }
     }
