@@ -1967,6 +1967,17 @@
     <Content Include="Views\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\.vscode\launch.json" />
     <Content Include="Views\master2.Master" />
+    <Content Include="Views\scss\owl.carousel.scss" />
+    <Content Include="Views\scss\owl.theme.default.scss" />
+    <Content Include="Views\scss\owl.theme.green.scss" />
+    <Content Include="Views\scss\_animate.scss" />
+    <Content Include="Views\scss\_autoheight.scss" />
+    <Content Include="Views\scss\_core.scss" />
+    <Content Include="Views\scss\_lazyload.scss" />
+    <Content Include="Views\scss\_theme.default.scss" />
+    <Content Include="Views\scss\_theme.green.scss" />
+    <Content Include="Views\scss\_theme.scss" />
+    <Content Include="Views\scss\_video.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

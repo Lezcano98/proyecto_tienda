@@ -31,6 +31,24 @@ namespace Electron.Views {
         protected global::System.Web.UI.WebControls.Label lbl_estado;
         
         /// <summary>
+        /// Control Repeater1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        
+        /// <summary>
+        /// Control SqlDatacarousel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatacarousel;
+        
+        /// <summary>
         /// Control SqlDataVideoJuegos.
         /// </summary>
         /// <remarks>
@@ -74,15 +92,6 @@ namespace Electron.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcodigo;
-        
-        /// <summary>
-        /// Control Image2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
         /// Control btningresar.

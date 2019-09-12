@@ -28,10 +28,19 @@
             width: 143px;
         }
     </style>
+  
+    <%-- para el carrusel --%>
+
+
+  
+    <%-- fin de los links --%>
+
+
 
      <script type="text/javascript" src="jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
-    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css"/>
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -94,14 +103,28 @@
                                                      <td>
                  
                   
-                <asp:Label ID="lbl_estado" runat="server"></asp:Label>
+                                   <asp:Label ID="lbl_estado" runat="server"></asp:Label>
                 
                                                      </td>
                                                      <td>&nbsp;</td>
                                                  </tr>
                                              </table>
-                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                     
+                                             <div id="owl-example" class="owl-carousel">
+                                             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDatacarousel">
+                                                 <Itemtemplate>
+
+                                                     <div class="contenido">
+                                                         <img src='<%#"data:Image/png;base64,"+Convert.ToBase64String ((byte [])Eval("Imagen")) %>' />
+
+                                                     </div>
+
+                                                 </Itemtemplate>
+
+                                             </asp:Repeater>
+                                                 
+                                             <asp:SqlDataSource ID="SqlDatacarousel" runat="server" ConnectionString="<%$ ConnectionStrings:ELECTRONConnectionString %>" SelectCommand="select imagen from Articulo where Tipo_Articulo=2"></asp:SqlDataSource>
+                                                     </div>                                                                                                                                                                                                                                                                                                                                  
                                             <br />
                                          </td>
                                      </tr>
@@ -139,9 +162,7 @@
           Descripcion:<asp:TextBox ID="txtdescripcion" runat="server" ReadOnly="True"></asp:TextBox><br>
           Precio:<asp:TextBox ID="txtprecio" runat="server" ReadOnly="True"></asp:TextBox><br>
           Codigo:<asp:TextBox ID="txtcodigo" runat="server" ReadOnly="True"></asp:TextBox><br>
-           <asp:Image ID="Image2" runat="server" />
 
-              </div>
       <div class="modal-footer">
           <asp:Button ID="btningresar" runat="server" OnClick="btningresar_Click" Text="Comprar Articulo" class="btn btn-primary" />
        <%-- <button type="button" class="btn btn-primary" data-dismiss="modal">Comprar</button>--%>
@@ -151,6 +172,8 @@
     </div>
   </div>
 </div>
+   </div>
+
 <%-- fin de la ventana modal  --%>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:Content>

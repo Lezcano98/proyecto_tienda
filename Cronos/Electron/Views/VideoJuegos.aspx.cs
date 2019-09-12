@@ -85,7 +85,7 @@ namespace Electron.Views
             this.txtdescripcion.Text = Descripcion;
             this.txtprecio.Text = precio;
             this.txtcodigo.Text = codigo.ToString();
-        
+
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "exampleModal", "$('#exampleModal').modal();", true);
 
         }

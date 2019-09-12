@@ -54,4 +54,4 @@ if @opcion=1
 	end
 end
 
---select * from Usuario
+select imagen from Articulo where Tipo_Articulo=2
